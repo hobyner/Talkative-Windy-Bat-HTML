@@ -517,7 +517,17 @@
   font-size: 14px;
   text-align: center;
 }
+.register-text2 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  padding-top: 20px;
+}
+.register-select {
+  padding: 15px;
+}
 .register-textinput {
+  margin-top: 10px;
   padding-top: 10px;
   border-color: var(--dl-color-gray-700);
   padding-bottom: 10px;
@@ -564,7 +574,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.register-text2 {
+.register-text3 {
   font-size: 12px;
   align-self: center;
   text-align: left;
