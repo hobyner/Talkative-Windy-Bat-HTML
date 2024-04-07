@@ -7,6 +7,9 @@
   flex-direction: column;
   background-color: var(--dl-color-gray-white);
 }
+.header-logo {
+  text-decoration: none;
+}
 .header-container {
   flex: 0 0 auto;
   width: auto;
@@ -28,14 +31,20 @@
   flex-direction: row;
   justify-content: flex-end;
 }
+.header-nav12 {
+  text-decoration: none;
+}
 .header-nav22 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-nav32 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-nav42 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-buttons {
   display: flex;
@@ -45,6 +54,10 @@
 }
 .header-login {
   margin-right: 32px;
+  text-decoration: none;
+}
+.header-register {
+  text-decoration: none;
 }
 .header-burger-menu {
   display: none;
@@ -197,7 +210,7 @@
 }
 .footer-container {
   flex: 0 0 auto;
-  width: 248px;
+  width: 10%;
   height: 100px;
   display: flex;
   align-items: flex-start;
@@ -212,7 +225,7 @@
 }
 .footer-container1 {
   flex: 0 0 auto;
-  width: 230px;
+  width: 10%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -227,7 +240,7 @@
 }
 .footer-container2 {
   flex: 0 0 auto;
-  width: 520px;
+  width: 80%;
   border: 2px dashed rgba(120, 120, 120, 0.4);
   height: 100px;
   display: flex;
@@ -248,11 +261,13 @@
   width: 100%;
   display: flex;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   justify-content: flex-start;
 }
 .footer-container4 {
   flex: 0 0 auto;
-  width: 456px;
+  width: 40%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -264,6 +279,7 @@
   align-self: flex-start;
   text-align: left;
   padding-left: 20px;
+  padding-bottom: 20px;
 }
 .footer-link {
   color: var(--dl-color-gray-white);
@@ -283,7 +299,7 @@
 }
 .footer-container5 {
   flex: 0 0 auto;
-  width: 516px;
+  width: 30%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -295,6 +311,7 @@
   align-self: flex-start;
   text-align: left;
   padding-left: 20px;
+  padding-bottom: 20px;
 }
 .footer-link04 {
   color: var(--dl-color-gray-white);
@@ -314,8 +331,8 @@
 }
 .footer-container6 {
   flex: 0 0 auto;
-  width: 546px;
-  height: 82px;
+  width: 30%;
+  height: auto;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -326,6 +343,7 @@
   align-self: flex-start;
   text-align: left;
   padding-left: 20px;
+  padding-bottom: 20px;
 }
 .footer-link08 {
   color: var(--dl-color-gray-white);
