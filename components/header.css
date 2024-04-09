@@ -7,6 +7,13 @@
   flex-direction: column;
   background-color: var(--dl-color-gray-white);
 }
+.header-navbar-interactive {
+  border-color: var(--dl-color-gray-black);
+  border-width: 0px;
+}
+.header-logo {
+  text-decoration: none;
+}
 .header-container {
   flex: 0 0 auto;
   width: auto;
@@ -28,14 +35,20 @@
   flex-direction: row;
   justify-content: flex-end;
 }
+.header-nav12 {
+  text-decoration: none;
+}
 .header-nav22 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-nav32 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-nav42 {
   margin-left: var(--dl-space-space-unit);
+  text-decoration: none;
 }
 .header-buttons {
   display: flex;
@@ -44,7 +57,13 @@
   justify-content: space-between;
 }
 .header-login {
+  font-family: "Inter";
   margin-right: 32px;
+  text-decoration: none;
+}
+.header-register {
+  font-family: "Inter";
+  text-decoration: none;
 }
 .header-burger-menu {
   display: none;
