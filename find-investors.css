@@ -479,7 +479,6 @@
   border-radius: var(--dl-radius-radius-radius8);
   background-color: #ffffff;
 }
-
 .user-card-root-class-name {
   height: 700px;
 }
@@ -487,6 +486,7 @@
   height: 700px;
   margin-left: 10px;
 }
+
 .user-card-root-class-name3 {
   height: 700px;
   margin-left: 10px;
@@ -985,7 +985,6 @@
     margin-bottom: 0px;
     padding-right: 20px;
     flex-direction: column;
-    padding-bottom: 20px;
   }
   .find-investors-container4 {
     padding-left: 20px;

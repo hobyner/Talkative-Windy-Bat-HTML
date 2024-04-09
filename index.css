@@ -375,7 +375,6 @@
   border-radius: var(--dl-radius-radius-radius8);
   background-color: #ffffff;
 }
-
 .user-card-root-class-name {
   height: 700px;
 }
@@ -383,6 +382,7 @@
   height: 700px;
   margin-left: 10px;
 }
+
 .user-card-root-class-name3 {
   height: 700px;
   margin-left: 10px;
@@ -747,7 +747,7 @@
   height: 703px;
   background-size: cover;
   background-color: transparent;
-  background-image: url("public/external/adobestock_302078039_editorial_use_only-scaled%20(1)-1500w.jpg");
+  background-image: url("public/external/untitled%20design%20(18)-1500w.png");
 }
 .home-container01 {
   gap: var(--dl-space-space-oneandhalfunits);
