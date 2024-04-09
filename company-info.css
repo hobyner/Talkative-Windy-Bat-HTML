@@ -158,6 +158,7 @@
   align-self: center;
 }
 
+
 @media(max-width: 767px) {
   .header-navbar-interactive {
     padding-left: var(--dl-space-space-twounits);
@@ -582,7 +583,15 @@
   }
   .company-info-container2 {
     width: 100%;
+    align-self: center;
+    align-items: center;
     padding-top: 30px;
+    justify-content: flex-start;
+  }
+  .company-info-text {
+    font-size: 20px;
+    align-self: center;
+    text-align: center;
   }
   .company-info-container4 {
     width: 100%;

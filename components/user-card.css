@@ -1,6 +1,9 @@
 .user-card-pricing-card {
   height: 786px;
   position: relative;
+  border-color: var(--dl-color-gray-900);
+  border-width: 1px;
+  border-radius: 20px;
   padding-bottom: 0px;
   background-color: #ffffff;
 }
@@ -63,6 +66,39 @@
   background-color: #ffffff;
 }
 
+.user-card-root-class-name {
+  height: 700px;
+}
+.user-card-root-class-name1 {
+  height: 700px;
+  margin-left: 10px;
+}
+.user-card-root-class-name3 {
+  height: 700px;
+  margin-left: 10px;
+}
+.user-card-root-class-name4 {
+  height: 700px;
+}
+.user-card-root-class-name5 {
+  height: 700px;
+  margin-left: 10px;
+}
+.user-card-root-class-name6 {
+  height: 700px;
+  margin-left: 10px;
+}
+.user-card-root-class-name7 {
+  height: 700px;
+}
+.user-card-root-class-name8 {
+  height: 700px;
+  margin-left: 10px;
+}
+.user-card-root-class-name9 {
+  height: 700px;
+  margin-left: 10px;
+}
 @media(max-width: 991px) {
   .user-card-pricing-card {
     width: 100%;

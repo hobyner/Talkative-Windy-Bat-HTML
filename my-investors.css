@@ -500,7 +500,7 @@
   }
 }
 
-.login-container {
+.my-investors-container {
   width: 100%;
   display: flex;
   overflow: auto;
@@ -508,7 +508,7 @@
   align-items: center;
   flex-direction: column;
 }
-.login-container1 {
+.my-investors-container1 {
   flex: 0 0 auto;
   width: 100%;
   height: 100px;
@@ -520,115 +520,145 @@
   flex-direction: column;
   justify-content: center;
 }
-.login-container2 {
+.my-investors-container2 {
   flex: 0 0 auto;
   width: 100%;
+  height: 100px;
   display: flex;
-  padding: 100px;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-container3 {
-  flex: 0 0 auto;
-  width: 467px;
-  display: flex;
-  padding: 50px;
-  box-shadow: 5px 5px 10px 0px #d4d4d4;
-  align-items: center;
-  border-color: var(--dl-color-gray-900);
-  border-width: 1px;
-  border-radius: var(--dl-radius-radius-radius8);
-  flex-direction: column;
-  justify-content: center;
-}
-.login-text {
-  padding: 10px;
-}
-.login-text1 {
-  padding: 10px;
-}
-.login-textinput {
-  padding-top: 10px;
-  border-color: var(--dl-color-gray-700);
-  padding-bottom: 10px;
-}
-.login-textinput1 {
-  margin-top: 20px;
-  padding-top: 10px;
-  border-color: var(--dl-color-gray-700);
-  padding-bottom: 10px;
-}
-.login-button {
-  color: var(--dl-color-gray-white);
-  margin-top: 20px;
-  border-color: var(--dl-color-gray-700);
-  background-color: var(--dl-color-custom-primary1);
-}
-.login-container4 {
-  flex: 0 0 auto;
-  width: 467px;
-  display: flex;
-  padding: 0px;
-  align-items: flex-start;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
   flex-direction: row;
   justify-content: center;
 }
-.login-container5 {
-  width: 353px;
+.my-investors-button {
+  transition: 0.3s;
+  border-color: #2563EB;
+}
+.my-investors-button:hover {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-button:active {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-button1 {
+  transition: 0.3s;
+  border-color: #2563EB;
+}
+.my-investors-button1:hover {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-button1:active {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-button2 {
+  transition: 0.3s;
+  border-color: #2563EB;
+}
+.my-investors-button2:hover {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-button2:active {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-text01:hover {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-text01:active {
+  color: var(--dl-color-gray-white);
+  background-color: #2563EB;
+}
+.my-investors-container3 {
+  flex: 0 0 auto;
+  width: 100%;
   height: 100px;
   display: flex;
-  align-items: flex-start;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 50px;
+  align-self: flex-start;
+  align-items: center;
   justify-content: flex-start;
+  background-color: #eff6ff;
 }
-.login-link {
-  font-size: 12px;
+.my-investors-navlink {
+  text-decoration: underline;
 }
-.login-container6 {
-  width: 429px;
-  height: 100px;
+.my-investors-container4 {
+  flex: 0 0 auto;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  padding-top: 20px;
-  border-color: var(--dl-color-gray-white);
-  padding-right: 20px;
-  justify-content: flex-end;
+  align-items: center;
+  padding-top: 50px;
+  border-color: rgba(120, 120, 120, 0.4);
+  border-style: dashed;
+  border-width: 0px;
+  flex-direction: column;
+  padding-bottom: 50px;
+  justify-content: center;
 }
-.login-link1 {
-  font-size: 12px;
-  text-align: right;
+.my-investors-pricing-card {
+  height: 786px;
+  position: relative;
+  border-radius: 15px;
+  padding-bottom: 0px;
+  justify-content: center;
+  background-color: #eff6ff;
+}
+.my-investors-text05 {
+  width: 70%;
+  font-size: 20px;
+  align-self: center;
+  text-align: center;
+}
+.my-investors-image {
+  width: 93px;
+  height: 93px;
+  align-self: center;
+  object-fit: cover;
+  border-radius: 100px;
 }
 @media(max-width: 991px) {
-  .login-container1 {
+  .my-investors-container1 {
     width: 641px;
   }
-  .login-container2 {
+  .my-investors-container2 {
     width: 641px;
   }
-  .login-container3 {
+  .my-investors-container4 {
     width: 641px;
   }
-  .login-container4 {
-    width: 641px;
+  .my-investors-pricing-card {
+    width: 100%;
+    padding: var(--dl-space-space-twounits);
+    max-width: 450px;
+  }
+}
+@media(max-width: 767px) {
+  .my-investors-pricing-card {
+    width: 100%;
+    max-width: 450px;
+    margin-right: 0px;
+    margin-bottom: var(--dl-space-space-twounits);
   }
 }
 @media(max-width: 479px) {
-  .login-container1 {
+  .my-investors-container1 {
     width: 100%;
     padding-top: 30px;
   }
-  .login-container2 {
+  .my-investors-container2 {
     width: 100%;
     padding-top: 30px;
   }
-  .login-container3 {
-    width: 426px;
-    padding-top: 30px;
-  }
-  .login-container4 {
-    width: 440px;
+  .my-investors-container4 {
+    width: 100%;
     padding-top: 30px;
   }
 }

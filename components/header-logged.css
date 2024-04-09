@@ -365,6 +365,8 @@
   background-color: #f8a13e;
 }
 
+
+
 @media(max-width: 767px) {
   .header-logged-navbar-interactive {
     padding-left: var(--dl-space-space-twounits);
