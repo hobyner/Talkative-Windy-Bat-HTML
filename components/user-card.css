@@ -1,6 +1,7 @@
 .user-card-pricing-card {
   height: 786px;
   position: relative;
+  box-shadow: 5px 5px 5px 0px #d4d4d4;
   border-color: var(--dl-color-gray-900);
   border-width: 1px;
   border-radius: 20px;

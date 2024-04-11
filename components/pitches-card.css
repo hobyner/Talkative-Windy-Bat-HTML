@@ -1,6 +1,8 @@
 .pitches-card-pricing-card {
   height: 869px;
   position: relative;
+  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  border-radius: 10px;
 }
 .pitches-card-image {
   width: 87px;
@@ -90,6 +92,9 @@
 .pitches-card-button {
   width: 100%;
 }
+
+
+
 @media(max-width: 991px) {
   .pitches-card-pricing-card {
     width: 100%;
@@ -103,5 +108,16 @@
     max-width: 450px;
     margin-right: 0px;
     margin-bottom: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .pitches-card-root-class-name {
+    height: auto;
+  }
+  .pitches-card-root-class-name1 {
+    height: auto;
+  }
+  .pitches-card-root-class-name2 {
+    height: auto;
   }
 }

@@ -7,24 +7,80 @@
   flex-direction: column;
   background-color: var(--dl-color-gray-white);
 }
-.header-logged-navbar-interactive {
-  border-color: var(--dl-color-gray-black);
-  border-width: 0px;
+.header-logged-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.header-logged-logo {
+.header-logged-container1 {
+  flex: 0 0 auto;
+  width: 10%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-logged-navlink {
+  display: contents;
+}
+.header-logged-image {
+  width: 70%;
+  object-fit: cover;
   text-decoration: none;
 }
-.header-logged-container {
+.header-logged-container2 {
+  flex: 0 0 auto;
+  width: 35%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.header-logged-textinput {
+  width: 90%;
+  padding-top: 20px;
+  border-color: var(--dl-color-gray-white);
+  border-style: hidden;
+  border-width: 0px;
+  padding-bottom: 20px;
+}
+.header-logged-container3 {
+  flex: 0 0 auto;
+  width: 55%;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-logged-navbar-interactive {
+  width: auto;
+  align-self: flex-end;
+  border-color: var(--dl-color-gray-black);
+  border-width: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: flex-end;
+}
+.header-logged-container4 {
   flex: 0 0 auto;
   width: auto;
   height: auto;
   display: flex;
-  align-items: space-between;
+  align-items: flex-end;
   flex-direction: column;
 }
 .header-logged-desktop-menu {
   flex: 1;
-  color: var(--dl-color-gray-black);
   display: flex;
   justify-content: space-between;
 }
@@ -37,17 +93,33 @@
   justify-content: flex-end;
 }
 .header-logged-nav12 {
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 150%;
   text-decoration: none;
 }
 .header-logged-nav22 {
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 150%;
   margin-left: var(--dl-space-space-unit);
   text-decoration: none;
 }
 .header-logged-nav32 {
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 150%;
   margin-left: var(--dl-space-space-unit);
   text-decoration: none;
 }
 .header-logged-nav42 {
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 150%;
   margin-left: var(--dl-space-space-unit);
   text-decoration: none;
 }
@@ -56,11 +128,6 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-}
-.header-logged-login {
-  font-family: "Inter";
-  margin-right: 32px;
-  text-decoration: none;
 }
 .header-logged-register {
   font-family: "Inter";
@@ -151,14 +218,14 @@
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
 }
-.header-logged-container1 {
+.header-logged-container5 {
   flex: 0 0 auto;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.header-logged-container2 {
+.header-logged-container6 {
   flex: 0 0 auto;
   width: 60%;
   height: 100px;
@@ -347,7 +414,7 @@
   font-style: normal;
   font-weight: 500;
 }
-.header-logged-container3 {
+.header-logged-container7 {
   flex: 0 0 auto;
   width: 40%;
   height: 100px;
@@ -400,13 +467,29 @@
   .header-logged-header {
     width: 479px;
   }
+  .header-logged-container {
+    padding-left: 25px;
+    padding-right: 10px;
+  }
+  .header-logged-image {
+    width: 100%;
+  }
+  .header-logged-container2 {
+    width: 60%;
+  }
+  .header-logged-container3 {
+    width: 30%;
+  }
   .header-logged-navbar-interactive {
     padding: var(--dl-space-space-unit);
   }
   .header-logged-mobile-menu1 {
     padding: 16px;
   }
-  .header-logged-container3 {
+  .header-logged-container6 {
+    padding-left: 16px;
+  }
+  .header-logged-container7 {
     align-items: flex-end;
     padding-right: 14px;
   }
