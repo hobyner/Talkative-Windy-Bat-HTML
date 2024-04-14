@@ -258,7 +258,7 @@
 }
 @media(max-width: 479px) {
   .header-header {
-    width: 479px;
+    width: 100%;
   }
   .header-image {
     width: 100%;

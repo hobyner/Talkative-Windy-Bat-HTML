@@ -1022,6 +1022,10 @@
   .footer-copyright {
     width: 100%;
     height: 105px;
+    justify-content: center;
+  }
+  .footer-text5 {
+    padding-right: 0px;
   }
 }
 @media(max-width: 479px) {
