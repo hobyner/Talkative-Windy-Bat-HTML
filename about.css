@@ -801,25 +801,30 @@
   }
   .about-container2 {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 70px;
     margin-right: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+  }
+  .about-text {
+    font-size: 20px;
+    text-align: center;
   }
   .about-container3 {
     width: 100%;
-    height: 1523px;
+    height: auto;
     align-items: center;
     padding-top: 30px;
-    padding-left: 20px;
+    padding-left: 0px;
     margin-bottom: 0px;
     padding-right: 0px;
+    padding-bottom: 70px;
     justify-content: flex-start;
   }
   .about-text01 {
     width: 90%;
     align-self: center;
-    text-align: center;
+    text-align: left;
   }
 }

@@ -115,3 +115,19 @@
     margin-bottom: var(--dl-space-space-twounits);
   }
 }
+@media(max-width: 479px) {
+  .user-card-pricing-card {
+    height: auto;
+  }
+  .user-card-container {
+    margin-bottom: 0px;
+  }
+  .user-card-free-plan-description {
+    font-style: normal;
+    font-weight: 600;
+  }
+  .user-card-text3 {
+    font-style: normal;
+    font-weight: 600;
+  }
+}

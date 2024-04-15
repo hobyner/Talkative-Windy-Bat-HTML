@@ -814,8 +814,11 @@
     width: 100%;
     align-self: center;
     align-items: center;
-    padding-top: 30px;
-    justify-content: flex-start;
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+    justify-content: center;
   }
   .company-info-text {
     font-size: 20px;

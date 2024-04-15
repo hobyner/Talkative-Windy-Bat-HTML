@@ -301,10 +301,9 @@
   text-transform: uppercase;
 }
 .pitches-card-container1 {
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: flex-start;
-  margin-bottom: var(--dl-space-space-unit);
   flex-direction: column;
 }
 .pitches-card-container2 {
@@ -342,7 +341,7 @@
 }
 .pitches-card-container5 {
   flex: 0 0 auto;
-  width: 100%;
+  width: auto;
   height: 100px;
   display: flex;
   align-items: center;
@@ -370,6 +369,8 @@
 }
 .pitches-card-button {
   width: 100%;
+  font-family: "Inter";
+  border-radius: var(--dl-radius-radius-radius4);
 }
 
 
@@ -390,6 +391,26 @@
   }
 }
 @media(max-width: 479px) {
+  .pitches-card-pricing-card {
+    height: auto;
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+  }
+  .pitches-card-container5 {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .pitches-card-container6 {
+    width: 50%;
+  }
+  .pitches-card-container7 {
+    width: 50%;
+  }
   .pitches-card-root-class-name {
     height: auto;
   }
@@ -516,6 +537,22 @@
     max-width: 450px;
     margin-right: 0px;
     margin-bottom: var(--dl-space-space-twounits);
+  }
+}
+@media(max-width: 479px) {
+  .user-card-pricing-card {
+    height: auto;
+  }
+  .user-card-container {
+    margin-bottom: 0px;
+  }
+  .user-card-free-plan-description {
+    font-style: normal;
+    font-weight: 600;
+  }
+  .user-card-text3 {
+    font-style: normal;
+    font-weight: 600;
   }
 }
 
@@ -1007,12 +1044,13 @@
 .home-container01 {
   gap: var(--dl-space-space-oneandhalfunits);
   display: flex;
+  align-self: center;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
 }
 .home-hero-heading {
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   width: 738px;
   font-size: 48px;
   max-width: 800px;
@@ -1030,12 +1068,14 @@
 }
 .home-button {
   color: #ffffff;
+  box-shadow: 2px 2px 5px 0px #232323;
   padding-top: 15px;
   border-color: var(--dl-color-gray-black);
   border-width: 0px;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 15px;
+  text-decoration: none;
   background-color: var(--dl-color-custom-accent1);
 }
 .home-pricing {
@@ -1074,6 +1114,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.home-banner {
+  padding-top: 10px;
 }
 .home-banner-heading {
   text-align: center;
@@ -1346,6 +1389,7 @@
   flex: 0 0 auto;
   width: 100%;
   display: flex;
+  align-self: center;
   align-items: center;
   padding-top: 80px;
   flex-direction: column;
@@ -1482,7 +1526,7 @@
 }
 @media(max-width: 479px) {
   .home-hero1 {
-    height: 797px;
+    height: auto;
     padding-top: var(--dl-space-space-twounits);
     padding-left: var(--dl-space-space-unit);
     padding-right: var(--dl-space-space-unit);
@@ -1492,20 +1536,23 @@
     margin-bottom: var(--dl-space-space-unit);
   }
   .home-hero-heading {
-    width: 100%;
+    width: 90%;
+    font-size: 30px;
   }
   .home-hero-sub-heading {
-    width: 100%;
+    width: 90%;
   }
   .home-pricing {
-    height: 2938px;
+    height: auto;
     padding: 20px;
   }
   .home-pricing-heading {
+    height: auto;
     text-align: center;
   }
   .home-container03 {
     height: auto;
+    padding-bottom: 0px;
   }
   .home-banner {
     position: relative;
@@ -1564,19 +1611,46 @@
   }
   .home-container13 {
     width: 90%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-text34 {
+    align-self: center;
+    text-align: center;
   }
   .home-container14 {
     width: 90%;
+    align-self: center;
     margin-top: 10px;
+    align-items: center;
     margin-left: 0px;
+    justify-content: center;
+  }
+  .home-text35 {
+    text-align: center;
   }
   .home-container15 {
     width: 90%;
+    align-self: center;
     margin-top: 10px;
+    align-items: center;
     margin-left: 0px;
+    justify-content: center;
+  }
+  .home-text36 {
+    text-align: center;
   }
   .home-container16 {
     width: 100%;
+    align-self: center;
+    align-items: center;
     padding-top: 80px;
+    padding-bottom: 0px;
+    justify-content: center;
+  }
+  .home-text37 {
+    align-self: center;
+    text-align: center;
   }
 }
