@@ -1,8 +1,10 @@
 .pitches-card-pricing-card {
-  height: 869px;
+  height: auto;
   position: relative;
-  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  box-shadow: 2px 2px 5px 0px #d4d4d4;
+  align-items: flex-start;
   border-radius: 10px;
+  justify-content: center;
 }
 .pitches-card-image {
   width: 87px;
@@ -20,6 +22,10 @@
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
+}
+.pitches-card-free-plan-description {
+  font-style: normal;
+  font-weight: 600;
 }
 .pitches-card-container1 {
   width: auto;
@@ -62,15 +68,15 @@
 }
 .pitches-card-container5 {
   flex: 0 0 auto;
-  width: auto;
-  height: 100px;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 .pitches-card-container6 {
   flex: 0 0 auto;
-  width: auto;
+  width: 50%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -78,7 +84,7 @@
 }
 .pitches-card-container7 {
   flex: 0 0 auto;
-  width: auto;
+  width: 50%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -114,10 +120,11 @@
 @media(max-width: 479px) {
   .pitches-card-pricing-card {
     height: auto;
-    padding-top: 60px;
+    margin: 0px;
+    padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
   .pitches-card-container5 {
     width: 100%;

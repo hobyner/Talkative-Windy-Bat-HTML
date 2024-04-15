@@ -226,7 +226,47 @@
   align-self: center;
 }
 
+.header-root-class-name3 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name4 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
 
+.header-root-class-name6 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name7 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name8 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name9 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name10 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-root-class-name11 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
 @media(max-width: 767px) {
   .header-navbar-interactive {
     padding-left: var(--dl-space-space-twounits);
@@ -260,28 +300,72 @@
   .header-header {
     width: 100%;
   }
+  .header-container1 {
+    height: auto;
+  }
   .header-image {
     width: 100%;
   }
   .header-container2 {
     width: 60%;
+    height: auto;
   }
   .header-container3 {
     width: 30%;
+    height: auto;
   }
   .header-navbar-interactive {
     padding: var(--dl-space-space-unit);
   }
   .header-mobile-menu1 {
+    left: 0px;
+    height: auto;
     padding: 16px;
+  }
+  .header-root-class-name3 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name4 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name5 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name7 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name8 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name9 {
+    top: 0px;
+    left: 0px;
+    position: static;
+  }
+  .header-root-class-name11 {
+    top: 0px;
+    left: 0px;
+    position: static;
   }
 }
 
 .pitches-card-pricing-card {
-  height: 869px;
+  height: auto;
   position: relative;
-  box-shadow: 5px 5px 5px 0px #d4d4d4;
+  box-shadow: 2px 2px 5px 0px #d4d4d4;
+  align-items: flex-start;
   border-radius: 10px;
+  justify-content: center;
 }
 .pitches-card-image {
   width: 87px;
@@ -299,6 +383,10 @@
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
+}
+.pitches-card-free-plan-description {
+  font-style: normal;
+  font-weight: 600;
 }
 .pitches-card-container1 {
   width: auto;
@@ -341,15 +429,15 @@
 }
 .pitches-card-container5 {
   flex: 0 0 auto;
-  width: auto;
-  height: 100px;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 .pitches-card-container6 {
   flex: 0 0 auto;
-  width: auto;
+  width: 50%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -357,7 +445,7 @@
 }
 .pitches-card-container7 {
   flex: 0 0 auto;
-  width: auto;
+  width: 50%;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -393,10 +481,11 @@
 @media(max-width: 479px) {
   .pitches-card-pricing-card {
     height: auto;
-    padding-top: 60px;
+    margin: 0px;
+    padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
   .pitches-card-container5 {
     width: 100%;
@@ -423,13 +512,13 @@
 }
 
 .user-card-pricing-card {
-  height: 786px;
+  height: auto;
+  padding: var(--dl-space-space-twounits);
   position: relative;
   box-shadow: 5px 5px 5px 0px #d4d4d4;
   border-color: var(--dl-color-gray-900);
   border-width: 1px;
   border-radius: 20px;
-  padding-bottom: 0px;
   background-color: #ffffff;
 }
 .user-card-image {
@@ -468,6 +557,10 @@
 .user-card-text1 {
   line-height: 150%;
 }
+.user-card-free-plan-description {
+  font-style: normal;
+  font-weight: 600;
+}
 .user-card-text2 {
   align-self: center;
   text-align: center;
@@ -475,7 +568,9 @@
 .user-card-text3 {
   font-size: 20px;
   align-self: center;
+  font-style: normal;
   text-align: center;
+  font-weight: 600;
 }
 .user-card-text4 {
   align-self: center;
@@ -538,6 +633,15 @@
     margin-right: 0px;
     margin-bottom: var(--dl-space-space-twounits);
   }
+  .user-card-root-class-name {
+    height: auto;
+  }
+  .user-card-root-class-name1 {
+    height: auto;
+  }
+  .user-card-root-class-name3 {
+    height: auto;
+  }
 }
 @media(max-width: 479px) {
   .user-card-pricing-card {
@@ -553,6 +657,21 @@
   .user-card-text3 {
     font-style: normal;
     font-weight: 600;
+  }
+  .user-card-root-class-name {
+    margin: 0px;
+  }
+  .user-card-root-class-name1 {
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+  .user-card-root-class-name3 {
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -901,6 +1020,56 @@
 
 
 
+.footer-root-class-name3 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name4 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name5 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name6 {
+  left: 0px;
+  bottom: 0px;
+  position: 0px;
+}
+.footer-root-class-name7 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name8 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name9 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name10 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name11 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name12 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
 @media(max-width: 991px) {
   .footer-prefooter1 {
     width: 100%;
@@ -1014,6 +1183,26 @@
   }
   .footer-text5 {
     text-align: center;
+  }
+  .footer-root-class-name3 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name4 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name5 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name12 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
   }
 }
 
@@ -1525,6 +1714,9 @@
   }
 }
 @media(max-width: 479px) {
+  .home-hero {
+    margin-top: 0px;
+  }
   .home-hero1 {
     height: auto;
     padding-top: var(--dl-space-space-twounits);

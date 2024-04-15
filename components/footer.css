@@ -343,6 +343,56 @@
 
 
 
+.footer-root-class-name3 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name4 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name5 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name6 {
+  left: 0px;
+  bottom: 0px;
+  position: 0px;
+}
+.footer-root-class-name7 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name8 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name9 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name10 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name11 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
+.footer-root-class-name12 {
+  left: 0px;
+  bottom: 0px;
+  position: static;
+}
 @media(max-width: 991px) {
   .footer-prefooter1 {
     width: 100%;
@@ -456,5 +506,25 @@
   }
   .footer-text5 {
     text-align: center;
+  }
+  .footer-root-class-name3 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name4 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name5 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
+  }
+  .footer-root-class-name12 {
+    left: 0px;
+    bottom: 17px;
+    position: static;
   }
 }
