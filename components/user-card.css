@@ -63,13 +63,14 @@
   align-self: center;
   text-align: center;
 }
-.user-card-button {
+.user-card-navlink {
   color: var(--dl-color-gray-900);
   width: 50%;
   align-self: center;
   border-color: var(--dl-color-gray-900);
   border-width: 1px;
   border-radius: var(--dl-radius-radius-radius8);
+  text-decoration: none;
   background-color: #ffffff;
 }
 .user-card-root-class-name {

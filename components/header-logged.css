@@ -424,11 +424,12 @@
   flex-direction: column;
   justify-content: center;
 }
-.header-logged-button {
+.header-logged-navlink1 {
   color: var(--dl-color-gray-white);
   font-style: normal;
   font-weight: 600;
   border-color: #f8a13e;
+  text-decoration: none;
   background-color: #f8a13e;
 }
 .header-logged-root-class-name {
@@ -497,6 +498,46 @@
   position: static;
 }
 .header-logged-root-class-name13 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name14 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name15 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name16 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name17 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name18 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name19 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name20 {
+  top: 0px;
+  left: 0px;
+  position: static;
+}
+.header-logged-root-class-name21 {
   top: 0px;
   left: 0px;
   position: static;
