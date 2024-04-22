@@ -275,10 +275,14 @@
   }
   .header-navbar-interactive {
     padding: var(--dl-space-space-unit);
+    position: relative;
   }
   .header-mobile-menu1 {
+    top: 16px;
     left: 0px;
+    width: var(--dl-size-size-xxlarge);
     height: auto;
     padding: 16px;
+    position: absolute;
   }
 }
