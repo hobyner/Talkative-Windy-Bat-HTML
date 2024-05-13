@@ -51,11 +51,11 @@ Route::get('/messages', function () {
 
 Route::get('/entrepreneur-faqs', function () {
     return view('entrepreneur_faqs');
-});
+})->name('entrepreneur_faqs');
 
 Route::get('/investor-faqs', function () {
     return view('investor_faqs');
-});
+})->name('investor_faqs');
 
 Route::get('/contact', function () {
     return view('contact');
