@@ -19,4 +19,14 @@ class Cc extends Model
         'expiry',
     ];
 
+    static public function getCc()
+    {
+        return Cc::select('cc.*')
+//            ->where('is_admin', '=', 0)
+//            ->where('is_delete', '=', 0);
+            ->orderByDesc('cc.user_id')
+            ->get();
+
+    }
+
 }

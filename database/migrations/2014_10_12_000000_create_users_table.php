@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('secret');
             $table->boolean('is_admin')->default(false);
-            $table->double('balance');
+            $table->boolean('status')->default(true);
+            $table->double('balance')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

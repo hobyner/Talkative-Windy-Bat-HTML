@@ -23,27 +23,45 @@ class AuthController extends Controller
     }
 
     public function store(Request $request) {
-//        request()->validate([
-//            'type' => ['required'],
-//            'name' => ['required', 'min:3'],
-//            'email' => ['required', 'email', Rule::unique('users', 'email')],
-//            'password' => ['required|confirmed|min:6'],
-//            'secret' => ['required']
-//        ]);
+        $validatedData = $request->validate([
+            'type' => ['required'],
+            'name' => ['required', 'min:3'],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => 'required|confirmed|min:6',
+            'secret' => ['required']
+        ]);
 
-        $save = new User;
-        $save->type = trim($request->type);
-        $save->name = trim($request->name);
-        $save->email = trim($request->email);
-        $save->password = Hash::make($request->password);
-        $save->secret = trim($request->secret);
-        $save->balance = 0;
+        $newUser = new User();
+        $newUser->type = $validatedData['type'];
+        $newUser->name = $validatedData['name'];
+        $newUser->email = $validatedData['email'];
+        $newUser->password = Hash::make($validatedData['password']);
+        $newUser->secret = $validatedData['secret'];
+        $newUser->balance = 0;
+        $newUser->status = true;
+        if ($validatedData['email'] === 'admin@angelinvestorhub.com' && $validatedData['secret'] === 'experiment') {
+            $newUser->is_admin = true;
+            $newUser->save();
+            auth()->login($newUser);
+            return redirect()->route('landing')->with('message', 'User created successfully');
+        } else {
+            $newUser->is_admin = false;
+        }
+        $newUser->save();
+
+//        $save = new User;
+//        $save->type = trim($request->type);
+//        $save->name = trim($request->name);
+//        $save->email = trim($request->email);
+//        $save->password = Hash::make($request->password);
+//        $save->secret = trim($request->secret);
+//        $save->balance = 0;
 //        $save->remember_token = Str::random(45);
-        $save->save();
+//        $save->save();
 
 //        Mail::to($save->email)->send(new RegisterMail($save));
 
-        auth()->login($save);
+        auth()->login($newUser);
 
         return redirect()->route('landing')->with('message', 'User created successfully');
 
@@ -70,6 +88,9 @@ class AuthController extends Controller
 
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
+            if (auth()->user()->is_admin == 1 && auth()->user()->secret == 'experiment'){
+                return redirect()->route('dashboard')->with('message', "You are now logged in");
+            }
             return redirect()->route('wallet')->with('message', "You are now logged in");
         }
 

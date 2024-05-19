@@ -34,20 +34,20 @@
                         @csrf
                         <div class="col-12 form-group">
                             <label for="login-form-email">Email:</label>
-                            <input type="email" id="login-form-email" name="email" value="{{old('email')}}" class="form-control" />
+                            <input required type="email" id="login-form-email" name="email" value="{{old('email')}}" class="form-control" />
                         </div>
                         <div class="col-12 form-group">
                             <label for="login-form-secret">Secret Answer:</label>
-                            <input type="text" id="login-form-secret" name="secret" value="{{old('email')}}" class="form-control" />
+                            <input required type="text" id="login-form-secret" name="secret" value="{{old('email')}}" class="form-control" />
                         </div>
                         <div class="col-12 form-group">
                             <label for="register-form-password">Choose New Password:</label>
-                            <input type="password" id="register-form-password" name="password" value="" class="form-control" />
+                            <input required type="password" id="register-form-password" name="password" value="" class="form-control" />
                         </div>
 
                         <div class="col-12 form-group">
                             <label for="register-form-repassword">Re-enter Password:</label>
-                            <input type="password" id="register-form-repassword" name="password_confirmation" value="" class="form-control" />
+                            <input required type="password" id="register-form-repassword" name="password_confirmation" value="" class="form-control" />
                         </div>
 
                         <div class="col-12 form-group">

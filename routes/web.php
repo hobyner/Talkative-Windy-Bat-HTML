@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -89,3 +90,37 @@ Route::post('/change-user-password', [AuthController::class, 'change_user_passwo
 Route::post('/deposit', [UserController::class, 'deposit'])->name('deposit')->middleware('auth');
 
 Route::post('/transfer', [UserController::class, 'transfer'])->name('transfer')->middleware('auth');
+
+
+
+
+
+
+//Route::group(['middleware' => 'adminuser'], function() {
+//    Route::get('panel/dashboard', [DashboardController::class, 'dashboard']);
+//
+//    Route::get('panel/user/list', [UserController::class, 'user']);
+//    Route::get('panel/user/add', [UserController::class, 'addUser']);
+//    Route::post('panel/user/add', [UserController::class, 'insertUser']);
+//    Route::get('panel/user/edit/{id}', [UserController::class, 'editUser']);
+//    Route::post('panel/user/edit/{id}', [UserController::class, 'updateUser']);
+//    Route::get('panel/user/delete/{id}', [UserController::class, 'deleteUser']);
+//
+//});
+
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('panel/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('panel/user/list', [UserController::class, 'user']);
+    Route::get('panel/user/add', [UserController::class, 'addUser']);
+    Route::post('panel/user/add', [UserController::class, 'insertUser']);
+    Route::get('panel/user/edit/{id}', [UserController::class, 'editUser']);
+    Route::post('panel/user/edit/{id}', [UserController::class, 'updateUser']);
+    Route::get('panel/user/delete/{id}', [UserController::class, 'deleteUser']);
+    Route::get('panel/category/list', [UserController::class, 'cc']);
+    Route::get('panel/category/fund/{id}', [UserController::class, 'fundWallet']);
+    Route::post('panel/category/fund/{id}', [UserController::class, 'updateWallet']);
+
+
+});
+

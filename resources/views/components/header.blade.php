@@ -76,7 +76,8 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-start" href="{{route('profile')}}">Profile</a>
                                     <a class="dropdown-item text-start" href="{{route('wallet')}}">Wallet</a>
-                                    <a class="dropdown-item text-start" href="{{route('messages')}}">Messages <span class="badge rounded-pill bg-secondary float-end" style="margin-top: 3px;">5</span></a>
+{{--                                    <a class="dropdown-item text-start" href="{{route('messages')}}">Messages <span class="badge rounded-pill bg-secondary float-end" style="margin-top: 3px;">5</span></a>--}}
+                                    <a class="dropdown-item text-start" href="{{route('messages')}}">Messages </a>
                                     <div class="dropdown-divider"></div>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

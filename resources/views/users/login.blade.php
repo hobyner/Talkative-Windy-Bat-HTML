@@ -33,12 +33,13 @@
                         @csrf
                         <div class="col-12 form-group">
                             <label for="login-form-email">Email:</label>
-                            <input type="email" id="login-form-email" name="email" value="{{old('email')}}" class="form-control" />
+                            <input required type="email" id="login-form-email" name="email" value="{{old('email')}}" class="form-control" />
+                            <div style="color:red">{{ $errors->first('email') }}</div>
                         </div>
 
                         <div class="col-12 form-group">
                             <label for="login-form-password">Password:</label>
-                            <input type="password" id="login-form-password" name="password" value="" class="form-control" />
+                            <input required type="password" id="login-form-password" name="password" value="" class="form-control" />
                         </div>
 
                         <div class="col-12 form-group">
@@ -71,7 +72,7 @@
 
                         <div class="col-12 form-group">
                             <label for="register-form-username">Name:</label>
-                            <input type="text" id="register-form-username" name="name" value="{{old('name')}}" class="form-control required" />
+                            <input type="text" id="register-form-username" name="name" value="{{old('name')}}" class="form-control" />
                         </div>
 
                         <div class="col-12 form-group">

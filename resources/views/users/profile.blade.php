@@ -43,17 +43,17 @@
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Name:</label>
-                                                <input type="text" name="jobs-application-name" id="jobs-application-name" class="form-control required" value="{{auth()->user()->name}}" placeholder="Enter your Full Name">
+                                                <input required type="text" name="jobs-application-name" id="jobs-application-name" class="form-control" value="{{auth()->user()->name}}" placeholder="Enter your Full Name">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label>Email:</label>
-                                                <input type="email" name="jobs-application-email" id="jobs-application-email" class="form-control required" value="{{auth()->user()->email}}" placeholder="Enter your Email">
+                                                <input required type="email" name="jobs-application-email" id="jobs-application-email" class="form-control" value="{{auth()->user()->email}}" placeholder="Enter your Email">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <div class="row">
                                                     <div class="col-md-6 form-group">
                                                         <label>Phone:</label>
-                                                        <input type="number" name="jobs-application-phone" id="jobs-application-phone" class="form-control required" value="" placeholder="Enter your Phone">
+                                                        <input required type="number" name="jobs-application-phone" id="jobs-application-phone" class="form-control" value="" placeholder="Enter your Phone">
                                                     </div>
                                                     <div class="col-md-6 form-group">
                                                         <label for="country">Country:</label>
@@ -312,7 +312,7 @@
 
                                                 <div class="form-group">
                                                     <label>Describe Yourself:</label>
-                                                    <textarea name="jobs-application-message" id="jobs-application-message" class="form-control required" cols="30" rows="10"></textarea>
+                                                    <textarea required name="jobs-application-message" id="jobs-application-message" class="form-control" cols="30" rows="10"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12 d-none">

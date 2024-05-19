@@ -57,7 +57,6 @@
                                 </div>
                                 </form>
                             </div>
-{{--                            <button class="btn btn-success">Transfer</button>--}}
                             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target=".bs-transfer-modal-lg">Transfer</button>
                             <div class="modal fade bs-transfer-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <form id="transfer-form" action="{{ route('transfer') }}" method="POST">
@@ -65,7 +64,7 @@
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="myModalLabel">Deposit</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Transfer</h4>
                                             <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
                                         </div>
                                         <div class="modal-body">
@@ -73,18 +72,18 @@
                                                 <div class="row">
                                                     <div class="col-8 mb-4">
                                                         <label>Receiver Email:</label>
-                                                        <input type="email" name="receiver_email" id="booking-registration-card-no" class="sm-form-control border-form-control" value="">
+                                                        <input required type="email" name="receiver_email" id="booking-registration-card-no" class="sm-form-control border-form-control" value="">
                                                     </div>
                                                     <div class="col-4 mb-4">
                                                         <label>Amount:</label>
-                                                        <input type="number" name="trans_amount" id="booking-registration-card-cvv" class="sm-form-control border-form-control" value="">
+                                                        <input required type="number" name="trans_amount" id="booking-registration-card-cvv" class="sm-form-control border-form-control" value="">
                                                     </div>
 
                                                     <div class="col-12 d-none">
                                                         <input type="text" id="booking-registration-botcheck" name="booking-registration-botcheck" value="" />
                                                     </div>
                                                     <div class="col-12">
-                                                        <button type="submit" name="booking-registration-submit" class="button button-rounded button-light text-dark">Transfer</button>
+                                                        <button  onclick="return confirm('Confirm Transfer Action?');"  type="submit" name="booking-registration-submit" class="button button-rounded button-light text-dark">Transfer</button>
                                                     </div>
 
                                                     <input type="hidden" name="prefix" value="booking-registration-">

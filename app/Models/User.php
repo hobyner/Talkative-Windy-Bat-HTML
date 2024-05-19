@@ -52,6 +52,7 @@ class User extends Authenticatable
         'secret',
         'type',
         'balance',
+        'status',
     ];
 
     /**
@@ -81,6 +82,21 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    static public function getUserRecord()
+    {
+        return User::select('users.*')
+//            ->where('is_admin', '=', 0)
+//            ->where('is_delete', '=', 0);
+              ->orderByDesc('users.id')
+//              ->paginate(10);
+              ->get();
+    }
+
+    static public function getUserCount()
+    {
+        return User::count();
     }
 
 }
