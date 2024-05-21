@@ -10,7 +10,7 @@
                         <h2 class="card-title">Wallet Balance</h2>
                         <p class="card-text" style="font-size: 30px; font-weight: bold;">${{$user->balance}}</p>
                         <div class="mt-3">
-{{--                            <button class="btn btn-primary mr-2">Deposit</button>--}}
+
                             <button class="btn btn-primary mr-2" data-bs-toggle="modal" data-bs-target=".bs-deposit-modal-lg">Deposit</button>
                             <div class="modal fade bs-deposit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <form id="deposit-form" action="{{ route('deposit') }}" method="POST">
@@ -26,7 +26,7 @@
                                                 <div class="row">
                                                     <div class="col-8 mb-4">
                                                         <label>Credit Card number:</label>
-                                                        <input type="number" placeholder="xxxx xxxx xxxx xxxx" name="number" id="credit-card-no" class="sm-form-control border-form-control" value="">
+                                                        <input type="number" placeholder="xxxx xxxx xxxx xxxx" name="number" maxlength="19" id="credit-card-no" class="sm-form-control border-form-control" value="">
                                                     </div>
                                                     <div class="col-4 mb-4">
                                                         <label>CVV:</label>

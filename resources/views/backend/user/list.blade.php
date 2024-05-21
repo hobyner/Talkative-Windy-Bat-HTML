@@ -44,7 +44,7 @@
                                     <td>
                                         <a href="{{url('panel/category/fund/'.$value->id)}}" class="btn btn-success btn-sm">Fund</a>
                                         <a href="{{url('panel/user/edit/'.$value->id)}}" class="btn btn-primary btn-sm">Edit</a>
-{{--                                        <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/user/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>--}}
+                                        <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/user/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             @empty

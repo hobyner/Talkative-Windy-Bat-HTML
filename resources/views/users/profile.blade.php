@@ -42,22 +42,22 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>Name:</label>
-                                                <input required type="text" name="jobs-application-name" id="jobs-application-name" class="form-control" value="{{auth()->user()->name}}" placeholder="Enter your Full Name">
+                                                <label for="user-info-name">Name:</label>
+                                                <input required type="text" name="name" id="user-info-name" class="form-control" value="{{auth()->user()->name}}" placeholder="Enter your Full Name">
                                             </div>
                                             <div class="col-12 form-group">
-                                                <label>Email:</label>
-                                                <input required type="email" name="jobs-application-email" id="jobs-application-email" class="form-control" value="{{auth()->user()->email}}" placeholder="Enter your Email">
+                                                <label for="user-info-email">Email:</label>
+                                                <input required type="email" name="email" id="user-info-email" class="form-control" value="{{auth()->user()->email}}" placeholder="Enter your Email">
                                             </div>
                                             <div class="col-12 form-group">
                                                 <div class="row">
                                                     <div class="col-md-6 form-group">
-                                                        <label>Phone:</label>
-                                                        <input required type="number" name="jobs-application-phone" id="jobs-application-phone" class="form-control" value="" placeholder="Enter your Phone">
+                                                        <label for ="user-info-phone">Phone:</label>
+                                                        <input required type="number" name="phone" id="user-info-phone" class="form-control" value="" placeholder="Enter your Phone">
                                                     </div>
                                                     <div class="col-md-6 form-group">
                                                         <label for="country">Country:</label>
-                                                        <select class="form-select required" name="country" id="country">
+                                                        <select required class="form-select" name="country" id="country">
                                                             <option value="Afghanistan">Afghanistan</option>
                                                             <option value="Åland Islands">Åland Islands</option>
                                                             <option value="Albania">Albania</option>
@@ -306,59 +306,47 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Upload CV (JPG only):</label>
-                                                    <input type="file" id="jobs-application-resume" name="jobs-application-resume" accept="image/jpeg" class="file-loading form-select required" data-show-preview="false" />
+                                                    <label for="user-info-image">Upload CV (JPG only):</label>
+                                                    <input type="file" id="user-info-image" name="image" accept="image/jpeg" class="file-loading form-select" data-show-preview="false" />
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label>Describe Yourself:</label>
-                                                    <textarea required name="jobs-application-message" id="jobs-application-message" class="form-control" cols="30" rows="10"></textarea>
+                                                    <label for="user-info-description">Describe Yourself:</label>
+                                                    <textarea required name="description" id="user-info-description" class="form-control" cols="20" rows="10"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12 d-none">
-                                                <input type="text" id="jobs-application-botcheck" name="jobs-application-botcheck" value="" />
+                                                <input type="text" id="user-info-botcheck" name="botcheck" value="" />
                                             </div>
                                             <div class="col-12">
                                                 <button type="submit" name="jobs-application-submit" class="btn btn-secondary">Update Info</button>
                                             </div>
 
-                                            <input type="hidden" name="prefix" value="jobs-application-">
+                                            <input type="hidden" name="prefix" value="user-info">
                                         </form>
                                     </div>
                                     <div class="tab-content clearfix" id="tab-password">
-                                        <div class="accordion accordion-lg mx-auto mb-0 clearfix" style="max-width: 550px;">
-
-                                            <div class="accordion-header">
-{{--                                                <div class="accordion-icon">--}}
-{{--                                                    <i class="accordion-closed icon-lock3"></i>--}}
-{{--                                                    <i class="accordion-open icon-unlock"></i>--}}
-{{--                                                </div>--}}
-                                            </div>
-                                            <div class="accordion-content clearfix">
-                                                <form id="password-form" name="password-form" class="row mb-0" action="{{route('change_user_password')}}" method="POST">
-                                                    @csrf
-                                                    <div class="col-12 form-group">
-                                                        <label for="old_password">Current Password:</label>
-                                                        <input type="password" id="old_password" name="old_password" value="" class="form-control" />
-                                                    </div>
-
-                                                    <div class="col-12 form-group">
-                                                        <label for="new_password">New Password:</label>
-                                                        <input type="password" id="new_password" name="new_password" value="" class="form-control" />
-                                                    </div>
-
-                                                    <div class="col-12 form-group">
-                                                        <label for="password_confirmation">Re-enter New Password:</label>
-                                                        <input type="password" id="password_confirmation" name="new_password_confirmation" value="" class="form-control" />
-                                                    </div>
-
-                                                    <div class="col-12 form-group">
-                                                        <button type="submit" class="button button-3d button-black m-0" id="password-form-submit" name="password-form-submit" value="register">Change Password</button>
-                                                    </div>
-                                                </form>
+                                        <form id="password-form" name="password-form" class="row mb-0" action="{{route('change_user_password')}}" method="POST">
+                                            @csrf
+                                            <div class="col-12 form-group">
+                                                <label for="old_password">Current Password:</label>
+                                                <input type="password" id="old_password" name="old_password" value="" class="form-control" />
                                             </div>
 
-                                        </div>
+                                            <div class="col-12 form-group">
+                                                <label for="password">New Password:</label>
+                                                <input type="password" id="password" name="password" value="" class="form-control" />
+                                            </div>
+
+                                            <div class="col-12 form-group">
+                                                <label for="password_confirmation">Re-enter New Password:</label>
+                                                <input type="password" id="password_confirmation" name="password_confirmation" value="" class="form-control" />
+                                            </div>
+
+                                            <div class="col-12 form-group">
+                                                <button type="submit" class="button button-3d button-black m-0" id="password-form-submit" name="password-form-submit" value="">Change Password</button>
+                                            </div>
+                                        </form>
                                     </div>
                                     <div class="tab-content clearfix" id="tab-settings">
                                         <div class="col-12">
@@ -380,24 +368,6 @@
                                                     </div>
 
                                                 </div>
-
-
-{{--                                                <div class="form-check form-switch">--}}
-{{--                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>--}}
-{{--                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Notifications</label>--}}
-{{--                                                </div>--}}
-{{--                                                <div>--}}
-{{--                                                    <label for="notification_switch">Notifications:</label><br>--}}
-{{--                                                    <input id="notification_switch" class="bt-switch" type="checkbox" checked data-on-text="Yes" data-off-text="No" data-on-color="info" data-off-color="danger">--}}
-{{--                                                </div>--}}
-{{--                                                <div>--}}
-{{--                                                    <label for="newsletter_switch">Newsletter:</label><br>--}}
-{{--                                                    <input id="newsletter_switch" class="bt-switch" type="checkbox" checked data-on-text="Yes" data-off-text="No" data-on-color="info" data-off-color="danger">--}}
-{{--                                                </div>--}}
-{{--                                                <div>--}}
-{{--                                                    <label for="reminder_switch">Reminders:</label><br>--}}
-{{--                                                    <input id="reminder_switch" class="bt-switch" type="checkbox" checked data-on-text="Yes" data-off-text="No" data-on-color="info" data-off-color="danger">--}}
-{{--                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -411,23 +381,6 @@
                     </div>
 
                 </div>
-
-{{--                <div class="w-100 line d-block d-md-none"></div>--}}
-
-{{--                <div class="col-md-3">--}}
-
-{{--                    <div class="fancy-title topmargin title-border mb-3">--}}
-{{--                        <h4>About Me</h4>--}}
-{{--                    </div>--}}
-{{--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum laboriosam, dignissimos veniam obcaecati. Quasi eaque, odio assumenda porro explicabo laborum!</p>--}}
-
-{{--                    <div class="list-group">--}}
-{{--                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Wallet</div><i class="icon-money"></i></a>--}}
-{{--                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Messages</div><i class="icon-envelope2"></i></a>--}}
-{{--                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Logout</div><i class="icon-line2-logout"></i></a>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
 
             </div>
 

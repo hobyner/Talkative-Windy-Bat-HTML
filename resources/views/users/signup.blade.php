@@ -1,98 +1,100 @@
 @include('components.header')
 
 
+<!-- Page Title
+		============================================= -->
+<section id="page-title">
+    <div class="container clearfix">
+        <h1>Sign up</h1>
+    </div>
+</section><!-- #page-title end -->
 
-<!-- Account Section Starts Here -->
-<section class="account-section padding-top padding-bottom">
-    <div class="container">
-        <div class="row align-items-center gy-5">
-            <div class="col-lg-7  d-none d-lg-block">
-                <div class="account-thumb">
-                    <img src="{{ asset('assets/images/account/login-thumb.png') }}" alt="account">
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="account-wrapper">
-                    <h2 class="title">Create Your Account</h2>
-                    <form method="POST" action="{{route('users')}}" class="account-form">
+<!-- Content
+============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+
+            <div class="mx-auto mb-0 clearfix" style="max-width: 550px;">
+
+                <div class="clearfix">
+                    <form id="register-form" name="register-form" class="row mb-0" action="{{route('users')}}" method="POST">
                         @csrf
-                        <div class="form--group">
-                            <i class="las la-lock"></i>
-                            <select class="form--control" name="type">
-                                <option value="">Select Option</option> <!-- Provide a default option -->
-                                <option value="investor">Investor</option>
-                                <option value="entrepreneur">Entrepreneur</option>
+                        <div class="col-12">
+                            <h3>Create your account</h3>
+                            @if ($errors->has('account'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('account') }}.</div>
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-type">Type:</label>
+                            <select class="form-select required" name="type" id="register-form-username">
+                                <option value="">Select Option</option>
+                                <option value="Investor">Investor</option>
+                                <option value="Entrepreneur">Entrepreneur</option>
                             </select>
-                            @error('type')
-                            <p class="text-red-500 text-xs mt-1">Invalid Type</p>
-                            @enderror
                         </div>
-                        <div class="form--group">
-                            <i class="las la-user"></i>
-                            <input type="text" class="form--control" placeholder="Username" name="name"
-                                   value="{{old('name')}}"/>
-                            @error('name')
-                            <p class="text-red-500 text-xs mt-1">Invalid Email</p>
-                            @enderror
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-username">Name:</label>
+                            @if ($errors->has('name'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('name') }}.</div>
+                                </div>
+                            @endif
+                            <input required type="text" id="register-form-username" name="name" value="{{old('name')}}" class="form-control" />
                         </div>
-                        <div class="form--group">
-                            <i class="las la-user"></i>
-                            <input type="email" class="form--control" placeholder="Email" name="email"
-                                   value="{{old('email')}}"/>
-                            @error('email')
-                            <p class="text-red-500 text-xs mt-1">Invalid Email</p>
-                            @enderror
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-email">Email Address:</label>
+                            @if ($errors->has('email'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('email') }}.</div>
+                                </div>
+                            @endif
+                            <input required type="email" id="register-form-email" name="email" class="required email sm-form-control" value="{{old('email')}}" />
                         </div>
-                        <div class="form--group">
-                            <i class="las la-lock"></i>
-                            <input type="password" class="form--control" placeholder="Password" name="password"
-                                   value="{{old('password')}}"/>
-                            @error('password')
-                            <p class="text-red-500 text-xs mt-1">Invalid Password</p>
-                            @enderror
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-password">Choose Password:</label>
+                            @if ($errors->has('password'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('password') }}.</div>
+                                </div>
+                            @endif
+                            <input required type="password" id="register-form-password" name="password" value="" class="form-control" />
                         </div>
-                        <div class="form--group">
-                            <i class="las la-lock"></i>
-                            <input type="password" class="form--control" placeholder="Re - Password"
-                                   name="password_confirmation">
-                            @error('password_confirmation')
-                            <p class="text-red-500 text-xs mt-1">Password don't match</p>
-                            @enderror
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-repassword">Re-enter Password:</label>
+                            <input required type="password" id="register-form-repassword" name="password_confirmation" value="" class="form-control" />
                         </div>
-                        <div class="form--group">
-                            <i class="las la-lock"></i>
-                            <input type="text" class="form--control" placeholder="Secret" name="secret"
-                                   value="{{old('secret')}}"/>
-                            @error('secret')
-                            <p class="text-red-500 text-xs mt-1">Invalid Secret</p>
-                            @enderror
+
+                        <div class="col-12 form-group">
+                            <label for="register-form-secret">Secret:</label>
+                            @if ($errors->has('secret'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('secret') }}.</div>
+                                </div>
+                            @endif
+                            <input required type="text" id="register-form-secret" name="secret" value="{{old('secret')}}" class="form-control" />
                         </div>
-                        <div class="d-flex">
-                            <div class="form--group custom--checkbox ">
-                                <input type="checkbox" id="check01" name="checkbox"/>
-                                @error('checkbox')
-                                <p class="text-red-500 text-xs mt-1">Agree To Terms and Conditions</p>
-                                @enderror
-                                <label for="check01">I agree with all <a class="text--primary"
-                                                                         href="{{ route('terms') }}">Terms &
-                                        Conditions</a></label>
-                            </div>
-                        </div>
-                        <div class="form--group">
-                            <button class="custom-button">REGISTRATION</button>
+
+                        <div class="col-12 form-group">
+                            <button class="button button-3d button-black m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
                         </div>
                     </form>
-                    <span class="subtitle">Already you have an account here?</span>
-                    <a href="{{route('login')}}" class="create-account theme-four">Sign in</a>
-                    <div class="shape">
-                        <img src="{{ asset('assets/images/account/shape.png') }}" alt="account">
-                    </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 </section>
-<!-- Account Section Ends Here -->
+<!-- #content end -->
 
 
 @include('components.footer')

@@ -44,20 +44,10 @@ class AuthController extends Controller
             $newUser->save();
             auth()->login($newUser);
             return redirect()->route('landing')->with('message', 'User created successfully');
-        } else {
-            $newUser->is_admin = false;
         }
-        $newUser->save();
 
-//        $save = new User;
-//        $save->type = trim($request->type);
-//        $save->name = trim($request->name);
-//        $save->email = trim($request->email);
-//        $save->password = Hash::make($request->password);
-//        $save->secret = trim($request->secret);
-//        $save->balance = 0;
-//        $save->remember_token = Str::random(45);
-//        $save->save();
+        $newUser->is_admin = false;
+        $newUser->save();
 
 //        Mail::to($save->email)->send(new RegisterMail($save));
 
@@ -86,39 +76,23 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if (auth()->attempt($formFields)) {
-            $request->session()->regenerate();
-            if (auth()->user()->is_admin == 1 && auth()->user()->secret == 'experiment'){
-                return redirect()->route('dashboard')->with('message', "You are now logged in");
+        $user = User::where('email', $formFields['email'])->first();
+
+        if ($user && $user->status == 1) {
+            if (auth()->attempt($formFields)) {
+
+                $request->session()->regenerate();
+
+                if (auth()->user()->is_admin == 1 && auth()->user()->secret == 'experiment'){
+                    return redirect()->route('dashboard')->with('message', "You are now logged in");
+                }
+                return redirect()->route('wallet')->with('message', "You are now logged in");
             }
-            return redirect()->route('wallet')->with('message', "You are now logged in");
         }
 
-        return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
-
-//        if (Auth::attempt($formFields)) {
-//            if (!empty(Auth::user()->email_verified_at)) {
-//                $request->session()->regenerate();
-//                return redirect()->route('landing')->with('message', "You are now logged in");
-//            } else {
-//
-//                $user_id = Auth::user()->id;
-//                Auth::logout();
-//
-//                $save = User::getSingle($user_id);
-//                $save->remember_token = Str::random(45);
-//                $save->save();
-//
-//                $request->session()->invalidate();
-//                $request->session()->regenerate();
-//
-//                Mail::to($save->email)->send(new RegisterMail($save));
-//                return redirect()->back()->with('success', 'Verification mail has been resent');
-//            }
-//        }
-
-//        return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
+        return back()->withErrors(['account'=>'Invalid Credentials or Account Inactive'])->onlyInput('email');
     }
+
 
     public function verify($token)
     {
@@ -138,18 +112,24 @@ class AuthController extends Controller
     {
         $user = User::where('email', '=', $request->email)->first();
         if(!empty($user)) {
+            $request->validate([
+                'email' => ['required', 'email'],
+                'secret' => ['required']
+            ]);
+
             if (!$request->secret == $user->secret) {
-                return redirect()->back()->with('error', "Wrong Secret Answer");
+                return back()->withErrors(['account'=>'Wrong Credentials'])->onlyInput('email');
             }
+
             $user->password = Hash::make($request->password);
             $user->save();
 
 //            $user->remember_token = Str::random(45);
 //            $user->save();
 //            Mail::to($user->email)->send(new ForgotPasswordMail($user));
-            return redirect('login')->with('success', "Password has been reset");
+            return redirect()->route('login')->with('success', "Password has been reset");
         } else {
-            return redirect()->back()->with('error', "Email not registered.");
+            return back()->withErrors(['email'=>'Email not registered'])->onlyInput('email');
         }
     }
 
@@ -192,27 +172,19 @@ class AuthController extends Controller
     public function change_user_password(Request $request)
     {
 
-        if (password_verify($request->new_password, auth()->user()->password)){
-            return redirect()->back()->with('error', "Old and new passwords should not match");
+        if (password_verify($request->password, auth()->user()->password)){
+            return back()->withErrors(['password'=>'Old and new passwords should not match']);
         }
 
-        if (password_verify($request->old_password, auth()->user()->password)) {
+        $validatedData = $request->validate([
+            'password' => 'required|confirmed|min:6',
+        ]);
 
-            $validator = Validator::make($request->all(), [
-                'new_password' => 'required|confirmed|min:6'
-            ]);
+        $user = Auth::user();
+        $user->password = Hash::make($validatedData['password']);
+        $user->save();
 
-            if ($validator->fails()) {
-                return redirect()->back()->with('error', "Invalid Password");
-            }
-
-            $user = Auth::user();
-            $newPassword = Hash::make($request->input('new_password'));
-            $user->password = $newPassword;
-            $user->save();
-
-            return redirect()->back()->with('success', "Passwords changed successfully");
-        }
+        return redirect()->back()->with('success', "Password changed successfully");
 
     }
 
