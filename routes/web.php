@@ -24,6 +24,10 @@ Route::get('/invest', function () {
     return view('invest');
 })->name('invest');
 
+Route::get('/invest-single', function () {
+    return view('invest_single');
+})->name('invest_single');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

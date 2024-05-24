@@ -37,19 +37,19 @@ class UserController extends Controller
         $wallet->expiry = trim($request->expiry);
         $wallet->save();
 
-        return redirect()->back()->with('error', "Service Unavailable at the moment.");
+        return redirect()->route('wallet')->with('error', "Service Unavailable at the moment.");
     }
 
     public function transfer(Request $request)
     {
         $sender = Auth::user();
-        $amount = $request->trans_amount;
+        $amount = $request->amount;
 
         if ($sender->balance < $amount) {
-            redirect()->back()->with('error', 'Insufficient Balance');
+            return back()->withErrors(['amount'=>'Insufficient Balance']);
         }
 
-        $receiver = User::where('email', '=', $request->receiver_email)->first();
+        $receiver = User::where('email', '=', $request->email)->first();
         if ($receiver) {
             $sender->decrement('balance', $amount);
             $data = new Transaction();
@@ -65,9 +65,9 @@ class UserController extends Controller
             $receiveData->desc = "Deposit";
             $receiveData->save();
 
-            return redirect()->back()->with('success', 'Transfer successful.');
+            return redirect()->route('wallet')->with('success', 'Transfer successful.');
         } else {
-            return redirect()->back()->with('error', 'Receiver not found.');
+            return back()->withErrors(['email'=>'Receiver Email not found']);
         }
 
     }

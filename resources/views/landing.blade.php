@@ -2,20 +2,31 @@
 
 
 
-<!-- slider Section
-		============================================= -->
-<section id="slider" class="slider-element swiper_wrapper min-vh-75 bg-color" data-loop="true">
+<section id="slider" class="slider-element slider-parallax include-header min-vh-100" style="background: url('{{asset('img/slider/1.jpg')}}') center center; background-size: cover;">
+    <div class="slider-inner">
 
-    <div class="swiper-container swiper-parent">
-        <div class="swiper-wrapper">
-            <div class="container">img/
-                <a href="#" class="d-block">
-                    <img class="w-100 rounded" src="{{asset('img/slider/1.jpg')}}" alt="Image">
-                </a>
+        <div class="vertical-middle slider-element-fade">
+            <div class="container text-center">
+
+                <div class="heading-block border-bottom-0 mb-0">
+                    <h2>Welcome to Angel InvestHub
+                        @guest
+                        <div class="mx-3 me-lg-0">
+                            <a href="{{route('login')}}">
+                                <button type="button" class="btn btn-success btn-md"><b>GET STARTED</b></button>
+                            </a>
+                        </div>
+                        @endguest
+{{--                        <div class="text-rotater" data-separator="|" data-rotate="flipInX" data-speed="3500">--}}
+{{--                            We make your Business <span class="t-rotate">Simple|Customizable|Flexible|Easy|Profitable</span>--}}
+{{--                        </div>--}}
+                    </h2>
+                </div>
+
             </div>
         </div>
-    </div>
 
+    </div>
 </section>
 
 <!-- Content
@@ -150,6 +161,52 @@
         </div> <!-- Section End -->
 
         <!-- 2. Section Shop by Category
+				============================================= -->
+        <div class="container-fluid">
+
+            <!-- Heading Title -->
+            <div class="text-center mt-6 mb-5">
+                <h2 class="h1 fw-normal mb-4">Our <span  data-animate="svg-underline-animated" class="svg-underline nocolor"><span>Industries</span></span></h2>
+            </div>
+
+            <!-- Categories -->
+            <div class="row item-categories gutter-20">
+                <div class="col-lg-4 col-md-6">
+                    <a href="#" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/technology.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Technology</h5>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/engineering.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Engineering</h5>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/education.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Education</h5>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/finance.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Finance</h5>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/fashion.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Fashion</h5>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/medicine.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                        <h5 class="text-uppercase ls1 bg-white mb-0">Medicine</h5>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- Section End -->
+
+        <!-- 2. Section Shop by Category
         ============================================= -->
         <div class="section bg-color-light mt-0 mb-0 ">
             <div class="container text-center mw-md topmargin bottommargin">
@@ -222,7 +279,7 @@
 
                         <div class="team team-list row align-items-center">
                             <div class="team-image col-sm-6">
-                                <img src="{{asset('img/team/investor.jpg')}}" alt="Nix Maxwell">
+                                <img src="{{asset('img/team/investor2.jpg')}}" alt="Nix Maxwell">
                             </div>
                             <div class="team-desc col-sm-6">
                                 <div class="team-title"><h4>Nix Maxwell</h4><span>Accountant</span></div>

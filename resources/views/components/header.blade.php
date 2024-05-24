@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="{{asset('demos/furniture/css/fonts.css')}}" type="text/css" />
     <!-- / -->
 
+    <!-- Invest Cards Stylesheet-->
+    <link rel="stylesheet" href="{{asset('demos/car/css/car-icons/style.css')}}" type="text/css" />
+    <!-- / -->
+
+
     <!-- Document Title
     ============================================= -->
     <title>AngelInvest</title>
@@ -47,7 +52,7 @@
 
         <!-- Header
         ============================================= -->
-        <header id="header" class="full-header">
+        <header id="header" class="full-header header-size-sm">
             <div id="header-wrap">
                 <div class="container">
                     <div class="header-row">
@@ -141,7 +146,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{asset('invest')}}">
                                         <div>Invest</div>
                                     </a>
                                 </li>
