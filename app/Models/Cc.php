@@ -29,4 +29,8 @@ class Cc extends Model
 
     }
 
+    static public function getSingle($id) {
+        return Cc::find($id);
+    }
+
 }

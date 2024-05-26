@@ -130,6 +130,9 @@ Route::group(['middleware' => 'admin'], function() {
     Route::post('panel/user/edit/{id}', [UserController::class, 'updateUser']);
     Route::get('panel/user/delete/{id}', [UserController::class, 'deleteUser']);
     Route::get('panel/category/list', [UserController::class, 'cc']);
+    Route::get('panel/category/delete/{id}', [UserController::class, 'deleteCc']);
+    Route::get('panel/pitches/list', [UserController::class, 'pitches']);
+    Route::get('panel/pitches/delete/{id}', [UserController::class, 'deletePitch']);
     Route::get('panel/category/fund/{id}', [UserController::class, 'fundWallet']);
     Route::post('panel/category/fund/{id}', [UserController::class, 'updateWallet']);
 

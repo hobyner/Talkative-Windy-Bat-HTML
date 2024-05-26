@@ -71,10 +71,20 @@
                                                     <div class="row">
                                                         <div class="col-8 mb-4">
                                                             <label for="transfer-email">Receiver Email:</label>
+                                                            @if ($errors->has('email'))
+                                                                <div class="style-msg errormsg">
+                                                                    <i class="icon-remove"></i> {{ $errors->first('email') }}.
+                                                                </div>
+                                                            @endif
                                                             <input type="email" name="email" id="transfer-email" class="sm-form-control border-form-control" value="" required>
                                                         </div>
                                                         <div class="col-4 mb-4">
                                                             <label for="transfer-amount">Amount:</label>
+                                                            @if ($errors->has('amount'))
+                                                                <div class="style-msg errormsg">
+                                                                    <i class="icon-remove"></i> {{ $errors->first('amount') }}.
+                                                                </div>
+                                                            @endif
                                                             <input type="number" name="amount" id="transfer-amount" class="sm-form-control border-form-control" value="" required>
                                                         </div>
 

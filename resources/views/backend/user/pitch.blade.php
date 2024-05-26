@@ -6,7 +6,7 @@
 
 
     <div class="pagetitle mb-3">
-        <h1>CC</h1>
+        <h1>Pitches</h1>
     </div>
 
     <section class="section">
@@ -22,10 +22,10 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">UserId</th>
-                                <th scope="col">Number</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Cvv</th>
-                                <th scope="col">Expiry</th>
+                                <th scope="col">Pitcher</th>
+                                <th scope="col">Industry</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Target</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -34,12 +34,12 @@
                                 <tr>
                                     <th scope="row">{{$value->id}}</th>
                                     <td>{{$value->user_id}}</td>
-                                    <td>{{$value->number}}</td>
-                                    <td>{{$value->name}}</td>
-                                    <td>{{$value->cvv}}</td>
-                                    <td>{{$value->expiry}}</td>
+                                    <td>{{$value->pitcher}}</td>
+                                    <td>{{$value->industry}}</td>
+                                    <td>{{$value->title}}</td>
+                                    <td>{{$value->target}}</td>
                                     <td>
-                                        <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/category/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                        <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/pitches/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             @empty

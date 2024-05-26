@@ -43,7 +43,7 @@ class AuthController extends Controller
             $newUser->is_admin = true;
             $newUser->save();
             auth()->login($newUser);
-            return redirect()->route('landing')->with('message', 'User created successfully');
+            return redirect()->route('landing')->with('message', 'ADMIN USER CREATED SUCCESSFULLY!');
         }
 
         $newUser->is_admin = false;
@@ -53,7 +53,7 @@ class AuthController extends Controller
 
         auth()->login($newUser);
 
-        return redirect()->route('landing')->with('message', 'User created successfully');
+        return redirect()->route('landing')->with('message', 'USER CREATED SUCCESSFULLY!');
 
     }
 
@@ -63,7 +63,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerate();
 
-        return redirect()->route('landing')->with('message', 'You have been logged out!');
+        return redirect()->route('landing')->with('message', 'YOU HAVE BEEN LOGGED OUT!');
     }
 
     public function login() {
@@ -84,9 +84,9 @@ class AuthController extends Controller
                 $request->session()->regenerate();
 
                 if (auth()->user()->is_admin == 1 && auth()->user()->secret == 'experiment'){
-                    return redirect()->route('dashboard')->with('message', "You are now logged in");
+                    return redirect()->route('dashboard')->with('message', "YOU ARE LOGGED IN AS ADMIN");
                 }
-                return redirect()->route('wallet')->with('message', "You are now logged in");
+                return redirect()->route('wallet')->with('message', "YOU ARE NOW LOGGED IN");
             }
         }
 
@@ -102,7 +102,7 @@ class AuthController extends Controller
             $user->remember_token = Str::random(35);
             $user->save();
 
-            return redirect('login')->with('success', "Your account is Verified");
+            return redirect('login')->with('success', "YOUR ACCOUNT IS VERIFIED");
         } else {
             abort(404);
         }
@@ -127,7 +127,7 @@ class AuthController extends Controller
 //            $user->remember_token = Str::random(45);
 //            $user->save();
 //            Mail::to($user->email)->send(new ForgotPasswordMail($user));
-            return redirect()->route('login')->with('success', "Password has been reset");
+            return redirect()->route('login')->with('success', "PASSWORD HAS BEEN RESET");
         } else {
             return back()->withErrors(['email'=>'Email not registered'])->onlyInput('email');
         }
@@ -158,10 +158,10 @@ class AuthController extends Controller
                 $user->remember_token = Str::random(45);
                 $user->save();
 
-                return redirect('login')->with('success', "Password has been reset");
+                return redirect('login')->with('success', "PASSWORD HAS BEEN RESET");
 
             } else {
-                return redirect()->back()->with('error', "Passwords do not match");
+                return redirect()->back()->with('error', "PASSWORDS DO NOT MATCH");
             }
 
         } else {
@@ -184,7 +184,7 @@ class AuthController extends Controller
         $user->password = Hash::make($validatedData['password']);
         $user->save();
 
-        return redirect()->back()->with('success', "Password changed successfully");
+        return redirect()->back()->with('success', "PASSWORD CHANGED SUCCESSFULLY");
 
     }
 

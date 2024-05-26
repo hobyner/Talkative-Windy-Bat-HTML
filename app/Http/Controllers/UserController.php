@@ -40,7 +40,7 @@ class UserController extends Controller
         $wallet->expiry = trim($request->expiry);
         $wallet->save();
 
-        return redirect()->route('wallet')->with('error', "Service Unavailable at the moment.");
+        return redirect()->route('wallet')->with('error', "SERVICE UNAVAILABLE AT THE MOMENT.");
     }
 
     public function transfer(Request $request)
@@ -68,7 +68,7 @@ class UserController extends Controller
             $receiveData->desc = "Deposit";
             $receiveData->save();
 
-            return redirect()->route('wallet')->with('success', 'Transfer successful.');
+            return redirect()->route('wallet')->with('success', 'TRANSFER SUCCESSFUL.');
         } else {
             return back()->withErrors(['email'=>'Receiver Email not found']);
         }
@@ -104,7 +104,7 @@ class UserController extends Controller
         $save->country = $request->country;
         $save->save();
 
-        return redirect('panel/user/list')->with('success', "User successfully created");
+        return redirect('panel/user/list')->with('success', "USER SUCCESSFULLY CREATED");
     }
 
     public function editUser($id)
@@ -130,16 +130,16 @@ class UserController extends Controller
         }
         $save->save();
 
-        return redirect('panel/user/list')->with('success', "User successfully updated");
+        return redirect('panel/user/list')->with('success', "USER SUCCESSFULLY UPDATED");
     }
 
     public function deleteUser($id)
     {
         $user = User::getSingle($id);
         if ($user->delete()) {
-            return redirect()->back()->with('success', "User deleted successfully");
+            return redirect()->back()->with('success', "USER DELETED SUCCESSFULLY");
         } else {
-            return redirect()->back()->with('error', "Delete operation failed");
+            return redirect()->back()->with('error', "DELETE OPERATION FAILED");
         }
 
     }
@@ -148,6 +148,34 @@ class UserController extends Controller
     {
         $data['getRecord'] = Cc::getCc();
         return view('backend.user.cc', $data);
+
+    }
+
+    public function deleteCc($id)
+    {
+        $user = Cc::getSingle($id);
+        if ($user->delete()) {
+            return redirect()->back()->with('success', "CC DELETED SUCCESSFULLY");
+        } else {
+            return redirect()->back()->with('error', "CC OPERATION FAILED");
+        }
+
+    }
+
+    public function pitches()
+    {
+        $data['getRecord'] = Pitch::getPitch();
+        return view('backend.user.pitch', $data);
+    }
+
+    public function deletePitch($id)
+    {
+        $user = Pitch::getSingle($id);
+        if ($user->delete()) {
+            return redirect()->back()->with('success', "PITCH DELETED SUCCESSFULLY");
+        } else {
+            return redirect()->back()->with('error', "PITCH OPERATION FAILED");
+        }
 
     }
 
@@ -180,11 +208,11 @@ class UserController extends Controller
                 $receiveData->desc = "Top-up";
                 $receiveData->save();
             } else {
-                return redirect()->back()->with('error', 'Failed!.');
+                return redirect()->back()->with('error', 'FAILED!.');
             }
-            return redirect('panel/user/list')->with('success', "Funding successful.");
+            return redirect('panel/user/list')->with('success', "FUNDING SUCCESSFUL.");
         } else {
-            return redirect()->back()->with('error', 'Receiver not found.');
+            return redirect()->back()->with('error', 'RECEIVER NOT FOUND.');
         }
 
     }
@@ -201,6 +229,7 @@ class UserController extends Controller
         ]);
 
         $pitch = new Pitch();
+        $pitch->user_id = auth()->user()->id;
         $pitch->pitcher = auth()->user()->name;
         $pitch->industry = $request->industry;
         $pitch->title = $request->title;
@@ -209,7 +238,7 @@ class UserController extends Controller
         $pitch->about = $request->about;
         $pitch->save();
 
-        return view('invest_single', compact('pitch'))->with('success', "Pitch successfully created");
+        return view('invest_single', compact('pitch'))->with('success', "PITCH SUCCESSFULLY CREATED");
     }
     public function getAllPitches(Request $request)
     {

@@ -34,4 +34,8 @@ class Pitch extends Model
             ->get();
 
     }
+
+    static public function getSingle($id) {
+        return Pitch::find($id);
+    }
 }

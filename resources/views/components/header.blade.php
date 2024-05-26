@@ -172,4 +172,5 @@
                 </div>
             </div>
             <div class="header-wrap-clone"></div>
+            <x-flash_messages />
         </header><!-- #header end -->
