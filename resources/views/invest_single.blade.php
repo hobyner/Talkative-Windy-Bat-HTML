@@ -27,7 +27,7 @@
                 <!-- Portfolio Single Image
                 ============================================= -->
                 <div class="col-12 portfolio-single-image">
-                    <a href="#"><img src="{{asset('img/car.jpg')}}" alt="Image"></a>
+                    <a href="#"><img src="{{asset('img/pitch.jpg')}}" alt="Image"></a>
                 </div><!-- .portfolio-single-image end -->
 
                 <!-- Portfolio Single Content

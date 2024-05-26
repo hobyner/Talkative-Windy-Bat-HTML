@@ -74,10 +74,6 @@ Route::get('/investor-faqs', function () {
     return view('investor_faqs');
 })->name('investor_faqs');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
 Route::get('/profile', function () {
     return view('users.profile');
 })->name('profile')->middleware('auth');

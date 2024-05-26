@@ -40,7 +40,7 @@
                     <div class="col-lg-4 col-md-6 pb-5" data-category="{{$pitch->industry}}" style="display: none;">
                         <!-- Card -->
                         <div class="card shadow-sm">
-                            <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
+                            <img src="{{('img/pitch.jpg')}}" class="card-img-top" alt="...">
                             <div class="card-body" style="height: 290px;">
                                 <span
                                     class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">{{$pitch->industry}}</span>

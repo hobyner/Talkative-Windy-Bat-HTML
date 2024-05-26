@@ -10,126 +10,88 @@
                         <h2 class="card-title">Wallet Balance</h2>
                         <p class="card-text" style="font-size: 30px; font-weight: bold;">${{$user->balance}}</p>
                         <div class="mt-3">
-                            <button class="btn btn-warning mr-2" data-bs-toggle="modal" data-bs-target="#bs-deposit-modal-lg">Deposit</button>
-                            <div class="modal fade" id="bs-deposit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="depositFormModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="contactFormModalLabel">Fund your wallet</h4>
-                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                        </div>
-                                        <div class="modal-body">
-
-                                            <div class="form-widget">
-                                                <div class="form-result"></div>
-                                                <form class="mb-0" id="deposit-form" name="deposit-form" action="{{route('deposit')}}" method="post">
-                                                @csrf
+                            <button class="btn btn-warning mr-2" data-bs-toggle="modal" data-bs-target=".bs-deposit-modal-lg">Deposit</button>
+                            <div class="modal fade bs-deposit-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <form id="deposit-form" action="{{ route('deposit') }}" method="POST">
+                                    @csrf
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Deposit</h4>
+                                                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container">
                                                     <div class="row">
-
-                                                        <div class="form-group">
-                                                            <label for="cc_number" class="mb-0">Credit Card Number <small>*</small></label>
-                                                            <input type="number" id="cc_number" name="number" value="" class="sm-form-control required" maxlength="19" placeholder="XXXX XXXX XXXX XXXX"/>
+                                                        <div class="col-8 mb-4">
+                                                            <label for="credit-card-no">Credit Card number:</label>
+                                                            <input type="number" placeholder="xxxx xxxx xxxx xxxx" name="number" id="credit-card-no" class="sm-form-control border-form-control" value="" required maxlength="19">
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="credit-card-cvv">CVV:</label>
+                                                            <input type="number" name="cvv" maxlength="3" pattern="\d*" id="credit-card-cvv" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-8 mb-4">
+                                                            <label for="credit-card-name">Name on Credit Card:</label>
+                                                            <input type="text" name="name" id="credit-card-name" class="sm-form-control border-form-control" value="" required>
+                                                            <small class="text-muted">Full name as displayed on card</small>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="credit-card-exp">Expiry:</label>
+                                                            <input type="text" value="" id="credit-card-exp" class="sm-form-control border-form-control text-start" name="expiry" placeholder="MM/YYYY" required>
                                                         </div>
 
-                                                        <div class="form-group">
-                                                            <label for="cc_name" class="mb-0">Name On Card <small>*</small></label>
-                                                            <input type="text" id="cc_name" name="name" value="" class="sm-form-control required" placeholder="JOHN DOE"/>
+                                                        <div class="col-12 d-none">
+                                                            <input type="text" id="credit-card-botcheck" name="credit-card-botcheck" value="" />
                                                         </div>
-
-                                                        <div class="w-100"></div>
-
-                                                        <div class="col-6 form-group">
-                                                            <label for="cc_expiry" class="mb-0">Expiry</label>
-                                                            <input type="text" id="cc_expiry" name="expiry" value="" class="sm-form-control required" placeholder="10/24"/>
-                                                        </div>
-
-                                                        <div class="col-6 form-group">
-                                                            <label for="cc_cvv" class="mb-0">Cvv <small>*</small></label>
-                                                            <input type="number" id="cc_cvv" name="cvv" value="" class="required sm-form-control" placeholder="123"/>
-                                                        </div>
-
-{{--                                                        <div class="col-12 form-group d-none">--}}
-{{--                                                            <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />--}}
-{{--                                                        </div>--}}
-
                                                         <div class="col-12">
-                                                            <button class="button button-3d m-0" id="cc_submit" name="cc-submit" value="">Fund Wallet</button>
+                                                            <button type="submit" name="booking-registration-submit" class="button button-rounded button-light text-dark">Deposit</button>
                                                         </div>
+
+                                                        <input type="hidden" name="prefix" value="booking-registration-">
                                                     </div>
-
-{{--                                                    <input type="hidden" name="prefix" value="template-contactform-">--}}
-
-                                                </form>
-
+                                                </div>
                                             </div>
-
                                         </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
+                                    </div>
+                                </form>
                             </div>
-
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#bs-transfer-modal-lg">Transfer</button>
-                            <div class="modal fade" id="bs-transfer-modal-lg" tabindex="-1" role="dialog" aria-labelledby="transferFormModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="contactFormModalLabel">Transfer Funds</h4>
-                                            <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                        </div>
-                                        <div class="modal-body">
-
-                                            <div class="form-widget">
-                                                <div class="form-result"></div>
-                                                <form class="mb-0" id="deposit-form" name="deposit-form" action="{{route('transfer')}}" method="post">
-
-{{--                                                    <div class="form-process">--}}
-{{--                                                        <div class="css3-spinner">--}}
-{{--                                                            <div class="css3-spinner-scaler"></div>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-                                                    <div class="row">
-
-                                                        <div class="col-sm-8 form-group">
-                                                            <label for="receiver_email" class="mb-0">Recipient Email <small>*</small></label>
-                                                            @if ($errors->has('email'))
-                                                                <div class="style-msg errormsg">
-                                                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('email') }}.</div>
-                                                                </div>
-                                                            @endif
-                                                            <input type="email" id="receiver_email" name="email" value="{{old('email')}}" class="sm-form-control required" />
-                                                        </div>
-
-{{--                                                        <div class="w-100"></div>--}}
-
-                                                        <div class="col-sm-4 form-group">
-                                                            <label for="amount" class="mb-0">Amount (Balance: ${{auth()->user()->balance}})<small>*</small></label>
-                                                            @if ($errors->has('amount'))
-                                                                <div class="style-msg errormsg">
-                                                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('amount') }}.</div>
-                                                                </div>
-                                                            @endif
-                                                            <input type="number" id="amount" name="amount" value="" class="required sm-form-control" />
-                                                        </div>
-
-                                                        <div class="col-12 form-group d-none">
-                                                            <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-                                                        </div>
-
-                                                        <div class="col-12 form-group">
-                                                            <button class="button button-3d m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Transfer</button>
-                                                        </div>
-                                                    </div>
-
-                                                    <input type="hidden" name="prefix" value="template-contactform-">
-
-                                                </form>
-
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target=".bs-transfer-modal-lg">Transfer</button>
+                            <div class="modal fade bs-transfer-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <form id="transfer-form" action="{{ route('transfer') }}" method="POST">
+                                    @csrf
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Deposit</h4>
+                                                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
                                             </div>
+                                            <div class="modal-body">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-8 mb-4">
+                                                            <label for="transfer-email">Receiver Email:</label>
+                                                            <input type="email" name="email" id="transfer-email" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-amount">Amount:</label>
+                                                            <input type="number" name="amount" id="transfer-amount" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
 
+                                                        <div class="col-12 d-none">
+                                                            <input type="text" id="booking-registration-botcheck" name="booking-registration-botcheck" value="" />
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <button type="submit" name="transfer-submit" class="button button-rounded button-light text-dark">Transfer</button>
+                                                        </div>
+
+                                                        <input type="hidden" name="prefix" value="booking-registration-">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
