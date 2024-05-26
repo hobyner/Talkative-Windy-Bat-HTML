@@ -1,4 +1,3 @@
-
 @include('components.header')
 
 <!-- Content============================================= -->
@@ -14,17 +13,20 @@
                             {{--                            <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste reprehenderit fugiat quisquam nesciunt. Dicta quis, rem consequuntur est beatae qui.</p>--}}
                         </div>
                         <div class="input-group input-group-lg mb-4">
-                            <input type="text" id="search-input" class="form-control w-auto" aria-label="Text input with dropdown button" placeholder="Search..">
+                            <input type="text" id="search-input" class="form-control w-auto"
+                                   aria-label="Text input with dropdown button" placeholder="Search..">
                             <select id="category-filter" class="form-select col col-4">
                                 <option selected value="All">All</option>
-                                <option value="Fashion">Fashion</option>
                                 <option value="Education">Education</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Fashion">Fashion</option>
+                                <option value="Medicine">Medicine</option>
                                 <option value="Technology">Technology</option>
                             </select>
-                            <button class="btn bg-color text-white border-0" type="button"><i class="icon-search"></i></button>
+                            <button class="btn bg-color text-white border-0" type="button"><i class="icon-search"></i>
+                            </button>
                         </div>
-                        {{--                        <a class="button button-rounded" href="#" role="button">Popular</a>--}}
-                        {{--                        <a class="button button-rounded button-dark button-black" href="#" role="button">Newest</a>--}}
                     </div>
                 </div>
             </div>
@@ -34,272 +36,33 @@
 
             <div class="row justify-content-center min-vh-100 align-items-center blocks-card-10" id="cards-container">
 
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6 pb-5" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Fashion</span>
-                            <h4 class="mb-2">Artificial hair implants</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
+                @forelse($getRecord as $pitch)
+                    <div class="col-lg-4 col-md-6 pb-5" data-category="{{$pitch->industry}}" style="display: none;">
+                        <!-- Card -->
+                        <div class="card shadow-sm">
+                            <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
+                            <div class="card-body" style="height: 290px;">
+                                <span
+                                    class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">{{$pitch->industry}}</span>
+                                <h4 class="mb-2" style="height: 40px; overflow: hidden;">{{$pitch->title}}</h4>
+                                <p class="mb-4 op-07" style="line-height: 1.65; height: 200px; overflow: hidden;">{{$pitch->about}}</p>
                             </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Education</span>
-                            <h4 class="mb-2">Uniben</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
+                            <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
+                                <div>
+                                    <h3 class="mb-0 h3 fw-semibold">${{$pitch->minimum}}</h3>
+                                    <span class="op-06">minimum per investor</span>
+                                </div>
+                                <a href="{{ route('show_pitch', $pitch->id) }}" class="button button-red rounded-pill m-0">More Info</a>
                             </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Technology" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Technology</span>
-                            <h4 class="mb-2">Open AI</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Fashion</span>
-                            <h4 class="mb-2">High heels</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Education</span>
-                            <h4 class="mb-2">Igbobi College</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Technology</span>
-                            <h4 class="mb-2">Dell Laptop</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Fashion</span>
-                            <h4 class="mb-2">Wedding dress</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Education</span>
-                            <h4 class="mb-2">Ojodu grammar school</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Technology</span>
-                            <h4 class="mb-2">Samsung Galaxy</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Fashion</span>
-                            <h4 class="mb-2">Adidas yeezy</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Education</span>
-                            <h4 class="mb-2">Havard University</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Technology</span>
-                            <h4 class="mb-2">Yamaha Generator</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-                <!-- COl -->
-                <div class="col-lg-4 col-md-6" data-category="Fashion" style="display: none;">
-                    <!-- Card -->
-                    <div class="card shadow-sm">
-                        <img src="{{('img/car.jpg')}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="badge bg-info text-dark mb-2 fw-normal px-2 py-1">Fashion</span>
-                            <h4 class="mb-2">Brazilian hair</h4>
-                            <p class="mb-4 op-07" style="line-height: 1.65">I have a patent for an Artificial Hair Implant Device that can be used for male pattern baldness, female pattern baldness, alopecia, beard thickening, eyebrows, etc. It is a very minor surgical procedure involving a needle poke and place of hair.</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center bg-white py-3">
-                            <div>
-                                <h3 class="mb-0 h3 fw-semibold">$10000</h3>
-                                <span class="op-06">minimum per investor</span>
-                            </div>
-                            <a href="#" class="button button-red rounded-pill m-0">More Info</a>
-                        </div>
-                    </div><!-- Card End-->
-                </div>
-
-
+                        </div><!-- Card End-->
+                    </div>
+                @empty
+                    <h1 class="text-center">RECORD NOT FOUND</h1>
+                @endforelse
 
             </div>
 
             <ul class="pagination justify-content-center mt-4" id="pagination-container">
-                <!-- Pagination items will be dynamically generated here -->
             </ul>
         </div>
     </div>
@@ -307,7 +70,7 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const filter = document.getElementById('category-filter');
         const searchInput = document.getElementById('search-input');
         const cardsContainer = document.getElementById('cards-container');

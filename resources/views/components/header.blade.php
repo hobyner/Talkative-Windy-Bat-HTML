@@ -141,7 +141,7 @@
                                     </li>
                                 @endauth
                                 <li class="menu-item">
-                                    <a class="menu-link" href="#">
+                                    <a class="menu-link" href="{{asset('pitch')}}">
                                         <div>Fundraise</div>
                                     </a>
                                 </li>

@@ -151,7 +151,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($user->transactions as $transaction)
+                            @foreach($user->transactions()->orderBy('created_at', 'desc')->limit(5)->get() as $transaction)
                                 <tr>
                                     <td>{{ $transaction->created_at->format('d-m-Y') }}</td>
                                     <td>{{ $transaction->desc }}</td>
@@ -195,7 +195,7 @@
                         </tr>
                         <tr>
                             <td>Country:</td>
-                            <td class="pages-value">USA</td>
+                            <td class="pages-value">{{$user->country}}</td>
                         </tr>
                         </tbody>
                     </table>

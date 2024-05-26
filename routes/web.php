@@ -20,13 +20,25 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
-Route::get('/invest', function () {
-    return view('invest');
-})->name('invest');
+//Route::get('/invest', function () {
+//    return view('invest');
+//})->name('invest');
 
-Route::get('/invest-single', function () {
-    return view('invest_single');
-})->name('invest_single');
+Route::get('/invest', [UserController::class, 'getAllPitches'])->name('invest')->middleware('auth');
+
+Route::get('/pitch', function () {
+    return view('pitch');
+})->name('pitch')->middleware('auth');
+
+Route::post('/pitch', [UserController::class, 'addPitch'])->name('pitch')->middleware('auth');
+
+Route::get('/pitch/{id}', [UserController::class, 'showPitch'])->name('show_pitch')->middleware('auth');
+
+
+
+//Route::get('/invest-single', function () {
+//    return view('invest_single');
+//})->name('invest_single');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -82,10 +94,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 
-Route::get('/verify/{token}', [AuthController::class, 'verify'])->name('verify');
+//Route::get('/verify/{token}', [AuthController::class, 'verify'])->name('verify');
 
-Route::get('/reset/{token}', [AuthController::class, 'reset'])->name('reset');
-Route::post('/reset/{token}', [AuthController::class, 'change_password'])->name('change_password');
+//Route::get('/reset/{token}', [AuthController::class, 'reset'])->name('reset');
+//Route::post('/reset/{token}', [AuthController::class, 'change_password'])->name('change_password');
 
 Route::post('/users/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 

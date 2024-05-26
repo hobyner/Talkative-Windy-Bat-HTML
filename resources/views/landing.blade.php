@@ -17,9 +17,6 @@
                             </a>
                         </div>
                         @endguest
-{{--                        <div class="text-rotater" data-separator="|" data-rotate="flipInX" data-speed="3500">--}}
-{{--                            We make your Business <span class="t-rotate">Simple|Customizable|Flexible|Easy|Profitable</span>--}}
-{{--                        </div>--}}
                     </h2>
                 </div>
 
@@ -76,7 +73,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="#" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -113,7 +110,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="#" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -150,7 +147,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="#" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -177,28 +174,28 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/engineering.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/engineering.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Engineering</h5>
                     </a>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/education.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/education.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Education</h5>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/finance.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/finance.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Finance</h5>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/fashion.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/fashion.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Fashion</h5>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="demo-forum-products.html" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/medicine.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/medicine.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Medicine</h5>
                     </a>
                 </div>
@@ -308,36 +305,36 @@
                     <div class="slider-wrap">
                         <div class="slide">
                             <div class="testi-image">
-                                <a href="#"><img src="{{asset('img/angel.png')}}" alt="Customer Testimonails"></a>
+                                <a href="#"><img src="{{asset('img/testimonial/1.jpg')}}" alt="Customer Testimonails"></a>
                             </div>
                             <div class="testi-content">
-                                <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                                <p>Unbelievable returns! My investments soared sky-high. Couldn't be happier with this platform!</p>
                                 <div class="testi-meta">
-                                    Steve Angel
+                                    Steve Reid
                                     <span>Crypto Expert.</span>
                                 </div>
                             </div>
                         </div>
                         <div class="slide">
                             <div class="testi-image">
-                                <a href="#"><img src="{{asset('img/angel.png')}}" alt="Customer Testimonails"></a>
+                                <a href="#"><img src="{{asset('img/testimonial/2.jpg')}}" alt="Customer Testimonails"></a>
                             </div>
                             <div class="testi-content">
-                                <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+                                <p>Secure, reliable, and profitable. Best decision ever made. Thank you for transforming my finances.</p>
                                 <div class="testi-meta">
-                                    Collis Reid
+                                    Martha Stone
                                     <span>Climate Engineer.</span>
                                 </div>
                             </div>
                         </div>
                         <div class="slide">
                             <div class="testi-image">
-                                <a href="#"><img src="{{asset('img/angel.png')}}" alt="Customer Testimonails"></a>
+                                <a href="#"><img src="{{asset('img/testimonial/3.jpg')}}" alt="Customer Testimonails"></a>
                             </div>
                             <div class="testi-content">
-                                <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                                <p>Unbelievable returns! My investments soared sky-high. Couldn't be happier with this platform!</p>
                                 <div class="testi-meta">
-                                    John Doe
+                                    Joe Lopez
                                     <span>XYZ Inc.</span>
                                 </div>
                             </div>

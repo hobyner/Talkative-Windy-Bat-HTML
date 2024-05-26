@@ -48,6 +48,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'country',
         'is_admin',
         'secret',
         'type',
@@ -82,6 +83,11 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    public function pitches()
+    {
+        return $this->hasMany(Pitch::class);
     }
 
     static public function getUserRecord()

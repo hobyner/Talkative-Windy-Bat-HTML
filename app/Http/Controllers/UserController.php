@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cc;
+use App\Models\Pitch;
 use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 use Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -88,7 +91,8 @@ class UserController extends Controller
         request()->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required'
+            'password' => 'required',
+            'secret' => 'secret'
         ]);
 
         $save = new User;
@@ -97,6 +101,7 @@ class UserController extends Controller
         $save->password = Hash::make($request->password);
         $save->type = trim($request->type);
         $save->secret = trim($request->secret);
+        $save->country = $request->country;
         $save->save();
 
         return redirect('panel/user/list')->with('success', "User successfully created");
@@ -128,7 +133,7 @@ class UserController extends Controller
         return redirect('panel/user/list')->with('success', "User successfully updated");
     }
 
-    public function deleteUser($id) //TODO COMPLETE DELETE FUNCTION
+    public function deleteUser($id)
     {
         $user = User::getSingle($id);
         if ($user->delete()) {
@@ -182,5 +187,39 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Receiver not found.');
         }
 
+    }
+
+    public function addPitch(Request $request)
+    {
+        Log::info($request);
+        request()->validate([
+//            'pitcher' => 'required',
+            'industry' => 'required',
+            'title' => ['required', Rule::unique('pitches', 'title')],
+            'target' => 'required',
+            'about' => 'required'
+        ]);
+
+        $pitch = new Pitch();
+        $pitch->pitcher = auth()->user()->name;
+        $pitch->industry = $request->industry;
+        $pitch->title = $request->title;
+        $pitch->target = $request->target;
+        $pitch->minimum = 1000;
+        $pitch->about = $request->about;
+        $pitch->save();
+
+        return view('invest_single', compact('pitch'))->with('success', "Pitch successfully created");
+    }
+    public function getAllPitches(Request $request)
+    {
+        $data['getRecord'] = Pitch::getPitch();
+        return view('invest', $data);
+    }
+
+    public function showPitch($id)
+    {
+        $pitch = Pitch::find($id);
+        return view('invest_single', compact('pitch'));
     }
 }

@@ -306,7 +306,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="user-info-image">Upload CV (JPG only):</label>
+                                                    <label for="user-info-image">Upload Picture (JPG only):</label>
                                                     <input type="file" id="user-info-image" name="image" accept="image/jpeg" class="file-loading form-select" data-show-preview="false" />
                                                 </div>
 
