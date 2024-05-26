@@ -31,7 +31,7 @@
     <!-- / -->
 
     <!-- Invest Cards Stylesheet-->
-    <link rel="stylesheet" href="{{asset('demos/car/css/car-icons/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('demos/car/style.css')}}" type="text/css" />
     <!-- / -->
 
 
