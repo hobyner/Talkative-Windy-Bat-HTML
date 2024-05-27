@@ -169,7 +169,7 @@
             <!-- Categories -->
             <div class="row item-categories gutter-20">
                 <div class="col-lg-4 col-md-6">
-                    <a href="#" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/technology.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
+                    <a href="{{route('invest')}}" class="d-block h-op-09 op-ts" style="background: url('{{asset("img/technology.jpg")}}') no-repeat center center; background-size: cover; height: 340px;">
                         <h5 class="text-uppercase ls1 bg-white mb-0">Technology</h5>
                     </a>
                 </div>

@@ -28,13 +28,15 @@ class AuthController extends Controller
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|confirmed|min:6',
-            'secret' => ['required']
+            'secret' => ['required'],
+            'country' => ['required']
         ]);
 
         $newUser = new User();
         $newUser->type = $validatedData['type'];
         $newUser->name = $validatedData['name'];
         $newUser->email = $validatedData['email'];
+        $newUser->country = $validatedData['country'];
         $newUser->password = Hash::make($validatedData['password']);
         $newUser->secret = $validatedData['secret'];
         $newUser->balance = 0;

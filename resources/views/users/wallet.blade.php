@@ -5,6 +5,13 @@
         <div class="row my-6">
             <div class="col-lg-12">
                 <!-- Wallet Balance Card -->
+                @if ($errors->has('wallet'))
+                    <div class="alert alert-dismissible alert-danger mb-0 text-center">
+                        <i class="icon-remove-sign"></i><strong>{{ $errors->first('wallet') }}</strong>
+                        <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-hidden="true"></button>
+                    </div>
+                @endif
+                <x-flash_messages />
                 <div class="card text-center wallet-card">
                     <div class="card-body">
                         <h2 class="card-title">Wallet Balance</h2>

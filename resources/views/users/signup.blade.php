@@ -60,6 +60,11 @@
 
                         <div class="col-12 form-group">
                             <label for="register-form-country">Country:</label>
+                            @if ($errors->has('country'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('country') }}.</div>
+                                </div>
+                            @endif
                             <select required class="form-select" name="country" id="country">
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
@@ -330,7 +335,7 @@
                                     <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('secret') }}.</div>
                                 </div>
                             @endif
-                            <input required type="text" id="register-form-secret" name="secret" value="{{old('secret')}}" class="form-control" />
+                            <input required type="text" id="register-form-secret" name="secret" value="" class="form-control" />
                         </div>
 
                         <div class="col-12 form-group">
