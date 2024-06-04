@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="col-12 form-group">
-                            <button class="button button-3d button-black m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+                            <button class="button m-0" id="login-form-submit" name="login-form-submit" value="login">Login</button>
                             <a href="{{route('forgot')}}" class="float-end">Forgot Password?</a>
                         </div>
 

@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="col-12 form-group">
-                            <button class="button button-3d m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+                            <button class="button m-0" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
                         </div>
 
                         <input type="hidden" name="prefix" value="template-contactform-">

@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="col-12 form-group">
-                            <button type="submit" class="button button-3d button-black m-0" id="login-form-submit" name="login-form-submit" value="">Reset</button>
+                            <button type="submit" class="button btn-primary m-0" id="login-form-submit" name="login-form-submit" value="">Reset</button>
                             <a href="{{route('login')}}" class="float-end">Remember Password?</a>
                         </div>
                     </form>

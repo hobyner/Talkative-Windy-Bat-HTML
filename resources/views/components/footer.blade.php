@@ -15,10 +15,10 @@
                         <h4 class="ls0 nott">Latest Blogs</h4>
 
                         <ul class="list-unstyled iconlist ms-0">
-                            <li><a href="#" target="_blank">Startup essentials: How to structure your cap table</a></li>
-                            <li><a href="#" target="_blank">Global Investor Survey: Positive impact driving decisions while over valuations most common startup mistake</a></li>
-                            <li><a href="#" target="_blank">How to avoid the Dark Side of Success - 5 key takeouts</a></li>
-                            <li><a href="#" target="_blank">Meet the investor: Christian Teichmann</a></li>
+                            <li><a href="https://blog.angelinvestorhub.com" target="_blank">Startup essentials: How to structure your cap table</a></li>
+                            <li><a href="https://blog.angelinvestorhub.com" target="_blank">Global Investor Survey: Positive impact driving decisions while over valuations most common startup mistake</a></li>
+                            <li><a href="https://blog.angelinvestorhub.com" target="_blank">How to avoid the Dark Side of Success - 5 key takeouts</a></li>
+                            <li><a href="https://blog.angelinvestorhub.com" target="_blank">Meet the investor: Christian Teichmann</a></li>
                         </ul>
 
                     </div>
@@ -52,7 +52,7 @@
                             <li><a href="#">Testimonials</a></li>
                             <li><a href="#">Company Info</a></li>
                             <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="https://blog.angelinvestorhub.com">Blog</a></li>
                         </ul>
 
                     </div>

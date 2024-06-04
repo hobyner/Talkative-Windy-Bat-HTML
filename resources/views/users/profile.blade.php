@@ -319,7 +319,7 @@
                                                 <input type="text" id="user-info-botcheck" name="botcheck" value="" />
                                             </div>
                                             <div class="col-12">
-                                                <button type="submit" name="jobs-application-submit" class="btn btn-secondary">Update Info</button>
+                                                <button type="submit" name="jobs-application-submit" class="btn btn-primary">Update Info</button>
                                             </div>
 
                                             <input type="hidden" name="prefix" value="user-info">
@@ -344,7 +344,7 @@
                                             </div>
 
                                             <div class="col-12 form-group">
-                                                <button type="submit" class="button button-3d button-black m-0" id="password-form-submit" name="password-form-submit" value="">Change Password</button>
+                                                <button type="submit" class="button m-0" id="password-form-submit" name="password-form-submit" value="">Change Password</button>
                                             </div>
                                         </form>
                                     </div>

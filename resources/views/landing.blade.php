@@ -13,7 +13,7 @@
                         @guest
                         <div class="mx-3 me-lg-0">
                             <a href="{{route('login')}}">
-                                <button type="button" class="btn btn-success btn-md"><b>GET STARTED</b></button>
+                                <button type="button" class="btn btn-primary btn-md"><b>GET STARTED</b></button>
                             </a>
                         </div>
                         @endguest
@@ -50,8 +50,8 @@
                                 <h3>Artificial Hair Implants</h3>
                             </div>
                             <div>
-                                <h3>&dollar;5,000 minimum investment</h3>
-                                <h3>&dollar;5,000,000 total required</h3>
+                                <h4 class="mb-0">&dollar;5,000 minimum investment</h4>
+                                <h4 class="mb-0">&dollar;5,000,000 total required</h4>
                             </div>
                             <!--									<div class="pricing-price">-->
                             <!--										<span class="price-unit">&dollar;5000min</span><h3>5,000</h3><span class="price-tenure">monthly</span>-->
@@ -73,7 +73,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-primary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -87,8 +87,8 @@
                                 <h3>Artificial Hair Implants</h3>
                             </div>
                             <div>
-                                <h3>&dollar;5,000 minimum investment</h3>
-                                <h3>&dollar;5,000,000 total required</h3>
+                                <h4 class="mb-0">&dollar;5,000 minimum investment</h4>
+                                <h4 class="mb-0">&dollar;5,000,000 total required</h4>
                             </div>
                             <!--									<div class="pricing-price">-->
                             <!--										<span class="price-unit">&dollar;5000min</span><h3>5,000</h3><span class="price-tenure">monthly</span>-->
@@ -110,7 +110,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-primary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -124,8 +124,8 @@
                                 <h3>Artificial Hair Implants</h3>
                             </div>
                             <div>
-                                <h3>&dollar;5,000 minimum investment</h3>
-                                <h3>&dollar;5,000,000 total required</h3>
+                                <h4 class="mb-0">&dollar;5,000 minimum investment</h4>
+                                <h4 class="mb-0">&dollar;5,000,000 total required</h4>
                             </div>
                             <!--									<div class="pricing-price">-->
                             <!--										<span class="price-unit">&dollar;5000min</span><h3>5,000</h3><span class="price-tenure">monthly</span>-->
@@ -147,7 +147,7 @@
                             <!--										<h3>&dollar;5,000,000 total required</h3>-->
                             <!--									</div>-->
                             <div class="pricing-action">
-                                <a href="{{route('invest')}}" class="btn btn-secondary btn-md">Find out more</a>
+                                <a href="{{route('invest')}}" class="btn btn-primary btn-md">Find out more</a>
                             </div>
                         </div>
 
@@ -265,7 +265,7 @@
                                     <p>Carbon emissions reductions giving, legitimize amplify non-partisan Aga Khan. Policy dialogue assessment expert free-speech cornerstone disruptor freedom. Cesar Chavez empower.</p>
                                 </div>
                                 <div class="pricing-action">
-                                    <a href="#" class="btn btn-secondary btn-md">More info</a>
+                                    <a href="{{route('invest')}}" class="btn btn-primary btn-md">More info</a>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +284,7 @@
                                     <p>Eradicate invest honesty human rights accessibility theory of social change. Diversity experience in the field compassion, inspire breakthroughs planned giving.</p>
                                 </div>
                                 <div class="pricing-action">
-                                    <a href="#" class="btn btn-secondary btn-md">More info</a>
+                                    <a href="{{route('invest')}}" class="btn btn-primary btn-md">More info</a>
                                 </div>
                             </div>
                         </div>

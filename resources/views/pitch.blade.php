@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="col-12 form-group">
-                            <button class="button button-3d button-black m-0" id="pitch-form-submit" name="pitch-form-submit" value="submit">Submit</button>
+                            <button class="button m-0" id="pitch-form-submit" name="pitch-form-submit" value="submit">Submit</button>
                         </div>
                     </form>
                 </div>

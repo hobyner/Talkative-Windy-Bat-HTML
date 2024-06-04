@@ -339,7 +339,7 @@
                         </div>
 
                         <div class="col-12 form-group">
-                            <button class="button button-3d button-black m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
+                            <button class="button m-0" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
                         </div>
 
                         <div class="col-12">
