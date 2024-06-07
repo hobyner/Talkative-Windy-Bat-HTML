@@ -47,12 +47,15 @@
                                                             <label for="credit-card-exp">Expiry:</label>
                                                             <input type="text" value="" id="credit-card-exp" class="sm-form-control border-form-control text-start" name="expiry" placeholder="MM/YYYY" required>
                                                         </div>
+                                                        <div class="col-12 mb-4 text-center">
+                                                            <img src="{{ asset('img/paypal.png') }}" class="img-fluid" style="max-width: 90px;">
+                                                        </div>
 
                                                         <div class="col-12 d-none">
                                                             <input type="text" id="credit-card-botcheck" name="credit-card-botcheck" value="" />
                                                         </div>
                                                         <div class="col-12">
-                                                            <button type="submit" name="booking-registration-submit" class="button button-rounded button-light text-dark">Deposit</button>
+                                                            <button type="submit" name="booking-registration-submit" class="button button-rounded">Deposit</button>
                                                         </div>
 
                                                         <input type="hidden" name="prefix" value="booking-registration-">
