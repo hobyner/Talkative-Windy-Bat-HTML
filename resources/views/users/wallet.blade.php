@@ -73,20 +73,29 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel">Deposit</h4>
+                                                <h4 class="modal-title" id="myModalLabel">Transfer</h4>
                                                 <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-8 mb-4">
-                                                            <label for="transfer-email">Receiver Email:</label>
-                                                            @if ($errors->has('email'))
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-rout">Rout:</label>
+                                                            @if ($errors->has('rout'))
                                                                 <div class="style-msg errormsg">
-                                                                    <i class="icon-remove"></i> {{ $errors->first('email') }}.
+                                                                    <i class="icon-remove"></i> {{ $errors->first('rout') }}.
                                                                 </div>
                                                             @endif
-                                                            <input type="email" name="email" id="transfer-email" class="sm-form-control border-form-control" value="" required>
+                                                            <input type="number" name="rout" id="transfer-rout" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-acct">Acct:</label>
+                                                            @if ($errors->has('acct'))
+                                                                <div class="style-msg errormsg">
+                                                                    <i class="icon-remove"></i> {{ $errors->first('acct') }}.
+                                                                </div>
+                                                            @endif
+                                                            <input type="text" name="acct" id="transfer-acct" class="sm-form-control border-form-control" value="" required>
                                                         </div>
                                                         <div class="col-4 mb-4">
                                                             <label for="transfer-amount">Amount:</label>
@@ -96,6 +105,36 @@
                                                                 </div>
                                                             @endif
                                                             <input type="number" name="amount" id="transfer-amount" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-12 mb-4">
+                                                            <label for="transfer-address">Address:</label>
+                                                            @if ($errors->has('address'))
+                                                                <div class="style-msg errormsg">
+                                                                    <i class="icon-remove"></i> {{ $errors->first('address') }}.
+                                                                </div>
+                                                            @endif
+                                                            <input type="text" name="address" id="transfer-address" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-rep">Account Rep:</label>
+                                                            <fieldset disabled>
+                                                                <input required type="text" id="transfer-rep" name="rep" value="Erik Jansen" class="form-control" placeholder=""/>
+                                                                </fieldset>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-email">Email:</label>
+                                                            @if ($errors->has('email'))
+                                                                <div class="style-msg errormsg">
+                                                                    <i class="icon-remove"></i> {{ $errors->first('email') }}.
+                                                                </div>
+                                                            @endif
+                                                            <input type="email" name="email" id="transfer-email" class="sm-form-control border-form-control" value="" required>
+                                                        </div>
+                                                        <div class="col-4 mb-4">
+                                                            <label for="transfer-phone">Phone:</label>
+                                                            <fieldset disabled>
+                                                                <input required type="text" id="transfer-phone" name="phone" value="530-771-1435" class="form-control" placeholder=""/>
+                                                            </fieldset>
                                                         </div>
 
                                                         <div class="col-12 d-none">
@@ -133,7 +172,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($user->transactions()->orderBy('created_at', 'desc')->limit(5)->get() as $transaction)
+                            @foreach($user->transactions()->orderBy('created_at', 'desc')->limit(7)->get() as $transaction)
                                 <tr>
                                     <td>{{ $transaction->created_at->format('d-m-Y') }}</td>
                                     <td>{{ $transaction->desc }}</td>
@@ -155,13 +194,21 @@
                         <thead>
                         <tr>
                             <th class="w-70">Items:</th>
-                            <th class="w-30">Price:</th>
+                            <th class="w-30">Value:</th>
                         </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>Account Rep:</td>
+                                <td class="responsive-value">Erik Jansen</td>
+                            </tr>
+                            <tr>
+                                <td>Account Email:</td>
+                                <td class="responsive-value">{{$user->email}}</td>
+                            </tr>
                         <tr>
                             <td>Minimum Investment:</td>
-                            <td class="responsive-value">$1000</td>
+                            <td class="responsive-value">530-771-1435</td>
                         </tr>
                         <tr>
                             <td>Maximum Investment:</td>

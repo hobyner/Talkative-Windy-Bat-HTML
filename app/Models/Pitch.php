@@ -18,6 +18,7 @@ class Pitch extends Model
         'target',
         'minimum',
         'about',
+        'file_path',
     ];
 
     public function user()

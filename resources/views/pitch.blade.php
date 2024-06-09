@@ -18,7 +18,7 @@
             <div class="mx-auto mb-0 clearfix" style="max-width: 550px;">
 
                 <div class="clearfix">
-                    <form id="pitch-form" name="pitch-form" class="row mb-0" action="{{route('pitch')}}" method="POST">
+                    <form id="pitch-form" name="pitch-form" class="row mb-0" action="{{route('pitch')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="col-12">
                             <h3>Create pitch</h3>
@@ -72,6 +72,17 @@
                                 </div>
                             @endif
                             <input required type="number" id="pitch-form-target" name="target" class="form-control" value="" />
+                        </div>
+
+                        <div class="col-12 form-group">
+                            <label for="pitch-form-file">Supporting Documents (5MB Max)</label>
+                            @if ($errors->has('pitch'))
+                                <div class="style-msg errormsg">
+                                    <div class="sb-msg"><i class="icon-remove"></i> {{ $errors->first('pitch') }}.</div>
+                                </div>
+                            @endif
+                            <input type="file" name="file" id="pitch-form-file" class="form-control" required>
+                            <small class="text-muted">**MORE THAN ONE DOCUMENT SHOULD BE ZIPPED BEFORE UPLOAD</small>
                         </div>
 
                         <div class="col-12 form-group">

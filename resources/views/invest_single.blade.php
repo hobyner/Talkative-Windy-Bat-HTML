@@ -7,7 +7,7 @@
 <section id="page-title">
 
     <div class="container clearfix">
-        <h1>Portfolio Single - Image</h1>
+        <h1>Pitch Details</h1>
         <div id="portfolio-navigation">
             <a href="#"><i class="icon-angle-left"></i></a>
             <a href="{{route('landing')}}"><i class="icon-home"></i></a>

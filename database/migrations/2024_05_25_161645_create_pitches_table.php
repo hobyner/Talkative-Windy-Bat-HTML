@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger('target');
             $table->bigInteger('minimum');
             $table->text('about');
+            $table->string('file_path')->nullable();
         });
     }
 

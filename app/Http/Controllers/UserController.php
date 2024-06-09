@@ -6,11 +6,13 @@ use App\Models\Cc;
 use App\Models\Pitch;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Auth;
 use Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -22,7 +24,7 @@ class UserController extends Controller
 
         $user = $request->user()->load(['transactions' => function ($query) {
 
-            $query->orderBy('created_at', 'desc')->limit(3);
+            $query->orderBy('created_at', 'desc')->limit(7);
         }]);
 
 
@@ -46,6 +48,15 @@ class UserController extends Controller
 
     public function transfer(Request $request)
     {
+        request()->validate([
+            'rout' => 'required',
+            'acct' => 'required|email',
+            'acct' => 'required',
+            'amount' => 'required',
+            'address' => 'required',
+        ]);
+
+
         $sender = Auth::user();
         $amount = $request->amount;
 
@@ -53,26 +64,43 @@ class UserController extends Controller
             return back()->withErrors(['wallet'=>'Insufficient Balance']);
         }
 
-        $receiver = User::where('email', '=', $request->email)->first();
-        if ($receiver) {
-            $sender->decrement('balance', $amount);
+        $sender->decrement('balance', $amount);
             $data = new Transaction();
             $data->user_id = auth()->user()->id;
             $data->amount = $amount;
             $data->desc = "Transfer";
             $data->save();
 
-            $receiver->increment('balance', $amount);
-            $receiveData = new Transaction();
-            $receiveData->user_id = $receiver->id;
-            $receiveData->amount = $amount;
-            $receiveData->desc = "Deposit";
-            $receiveData->save();
+        $transfer = new Transfer();
+        $transfer->user_id = auth()->user()->id;
+        $transfer->rout = $request->rout;
+        $transfer->acct = $request->acct;
+        $transfer->amount = $amount;
+        $transfer->address = $request->address;
+        $transfer->rep = "Erik Jansen";
+        $transfer->email = $request->email;
+        $transfer->phone = "530-771-145";
+        $transfer->save();
 
-            return redirect()->route('wallet')->with('success', 'TRANSFER SUCCESSFUL.');
-        } else {
-            return back()->withErrors(['wallet'=>'Receiver Email not found']);
-        }
+
+
+        return redirect()->route('wallet')->with('success', 'TRANSFER SUCCESSFUL.');
+
+        // $receiver = User::where('email', '=', $request->email)->first();
+        // if ($receiver) {
+            
+
+        //     $receiver->increment('balance', $amount);
+        //     $receiveData = new Transaction();
+        //     $receiveData->user_id = $receiver->id;
+        //     $receiveData->amount = $amount;
+        //     $receiveData->desc = "Deposit";
+        //     $receiveData->save();
+
+        //     return redirect()->route('wallet')->with('success', 'TRANSFER SUCCESSFUL.');
+        // } else {
+        //     return back()->withErrors(['wallet'=>'Receiver Email not found']);
+        // }
 
     }
 
@@ -180,6 +208,23 @@ class UserController extends Controller
 
     }
 
+    public function trans()
+    {
+        $data['getRecord'] = Transfer::getTransfer();
+        return view('backend.user.trans', $data);
+    }
+
+    public function deleteTrans($id)
+    {
+        $user = Transfer::getSingle($id);
+        if ($user->delete()) {
+            return redirect()->back()->with('success', "TRANS DELETED SUCCESSFULLY");
+        } else {
+            return redirect()->back()->with('error', "TRANS OPERATION FAILED");
+        }
+
+    }
+
     public function fundWallet($id)
     {
         $data['getRecord'] = User::getSingle($id);
@@ -226,7 +271,8 @@ class UserController extends Controller
             'industry' => 'required',
             'title' => ['required', Rule::unique('pitches', 'title')],
             'target' => 'required',
-            'about' => 'required'
+            'about' => 'required',
+            'file' => 'required|file|mimes:jpg,png,pdf,docx,zip|max:5120'
         ]);
 
         $pitch = new Pitch();
@@ -237,6 +283,13 @@ class UserController extends Controller
         $pitch->target = $request->target;
         $pitch->minimum = 1000;
         $pitch->about = $request->about;
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $path = $file->store('uploads', 'public'); 
+            $pitch->file_path = $path;
+        } else {
+            return back()->with('error', 'No file was uploaded.');
+        }
         $pitch->save();
 
         return view('invest_single', compact('pitch'))->with('success', "PITCH SUCCESSFULLY CREATED");
@@ -251,5 +304,31 @@ class UserController extends Controller
     {
         $pitch = Pitch::find($id);
         return view('invest_single', compact('pitch'));
+    }
+
+    public function downloadFile($id)
+    {
+        $pitch = Pitch::findOrFail($id);
+
+        if (Storage::disk('public')->exists($pitch->file_path)) {
+            return Storage::disk('public')->download($pitch->file_path);
+        }
+
+        return back()->with('error', 'File not found.');
+    }
+
+    public function deleteFile($id)
+    {
+        $pitch = Pitch::findOrFail($id);
+
+        if (Storage::disk('public')->exists($pitch->file_path)) {
+            Storage::disk('public')->delete($pitch->file_path);
+            $pitch->file_path = null;
+            $pitch->save();
+
+            return back()->with('success', 'File deleted successfully.');
+        }
+
+        return back()->with('error', 'File not found.');
     }
 }

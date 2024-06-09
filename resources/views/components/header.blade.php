@@ -8,9 +8,13 @@
     <!-- Stylesheets
     ============================================= -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .font-primary {
+            font-family: 'Jost', sans-serif !important;
+        }
+    </style>
+
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('style.css')}}" type="text/css"/>
@@ -86,7 +90,7 @@
                                     <a class="dropdown-item text-start" href="{{route('profile')}}">Profile</a>
                                     <a class="dropdown-item text-start" href="{{route('wallet')}}">Wallet</a>
                                     {{--                                    <a class="dropdown-item text-start" href="{{route('messages')}}">Messages <span class="badge rounded-pill bg-secondary float-end" style="margin-top: 3px;">5</span></a>--}}
-                                    <a class="dropdown-item text-start" href="{{route('messages')}}">Messages </a>
+                                    {{-- <a class="dropdown-item text-start" href="{{route('messages')}}">Messages </a> --}}
                                     <div class="dropdown-divider"></div>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"

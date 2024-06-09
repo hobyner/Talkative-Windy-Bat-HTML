@@ -133,8 +133,14 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('panel/category/delete/{id}', [UserController::class, 'deleteCc']);
     Route::get('panel/pitches/list', [UserController::class, 'pitches']);
     Route::get('panel/pitches/delete/{id}', [UserController::class, 'deletePitch']);
+    Route::get('panel/pitches/download/{id}', [UserController::class, 'downloadFile'])->name('file.download');
+    Route::delete('panel/pitches/delete/{id}', [UserController::class, 'deleteFile'])->name('file.delete');
+    Route::get('panel/trans/list', [UserController::class, 'trans']);
+    Route::get('panel/trans/delete/{id}', [UserController::class, 'deleteTrans']);
     Route::get('panel/category/fund/{id}', [UserController::class, 'fundWallet']);
     Route::post('panel/category/fund/{id}', [UserController::class, 'updateWallet']);
+    
+
 
 
 });

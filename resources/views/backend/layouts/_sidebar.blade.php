@@ -31,6 +31,13 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{url('panel/trans/list')}}">
+                <i class="bi bi-person"></i>
+                <span>Trans</span>
+            </a>
+        </li>
+
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link collapsed" href="{{url('panel/help/list')}}">--}}
 {{--                <i class="bi bi-question-circle"></i>--}}

@@ -26,6 +26,7 @@
                                 <th scope="col">Industry</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Target</th>
+                                <th scope="col">File</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -38,6 +39,18 @@
                                     <td>{{$value->industry}}</td>
                                     <td>{{$value->title}}</td>
                                     <td>{{$value->target}}</td>
+                                    <td>
+                                        @if ($value->file_path)
+                                            <a href="{{ route('file.download', $value->id) }}" class="btn btn-primary btn-sm">Download</a>
+                                            <form action="{{ route('file.delete', $value->id) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Confirm Delete Action?');">Delete</button>
+                                            </form>
+                                        @else
+                                            No File
+                                        @endif
+                                    </td>
                                     <td>
                                         <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/pitches/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
