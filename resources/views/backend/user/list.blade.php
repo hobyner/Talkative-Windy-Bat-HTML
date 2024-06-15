@@ -33,6 +33,7 @@
                             </thead>
                             <tbody>
                             @forelse($getRecord as $value)
+                            @if(!$value->is_admin)
                                 <tr>
                                     <th scope="row">{{$value->id}}</th>
                                     <td>{{$value->name}}</td>
@@ -47,6 +48,7 @@
                                         <a onclick="return confirm('Confirm Delete Action?');" href="{{url('panel/user/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
+                            @endif
                             @empty
                                 <tr>
                                     <td colspan="100%">Record not found.</td>

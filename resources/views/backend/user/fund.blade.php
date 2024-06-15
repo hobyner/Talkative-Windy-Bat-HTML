@@ -17,17 +17,16 @@
                             @csrf
                             <div class="col-12">
                                 <label for="inputName" class="form-label">Amount (client-balance: {{$getRecord->balance}})</label>
-                                <input type="text" value="{{$getRecord->balance}}" class="form-control" name="amount" required id="inputName">
+                                <input type="text" value="" class="form-control" name="amount" required id="inputName" placeholder="Enter amount here">
                                 <div style="color:red">{{ $errors->first('name') }}</div>
                             </div>
                             <div class="col-12">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" value="{{$getRecord->email}}" class="form-control" name="email" required id="inputEmail">
-                                <div style="color:red">{{ $errors->first('email') }}</div>
+                                  <input type="email" class="form-control" value="{{$getRecord->email}}" name="email" disabled id="inputEmail">
                             </div>
                             <div class="col-12">
                                 <label for="inputPassword" class="form-label">AdminKey</label>
-                                <input type="text" class="form-control" name="key" id="inputPassword">
+                                <input type="text" class="form-control" name="key" id="inputPassword" placeholder="Enter secret here">
                             </div>
                             <div class="text-center">
                                 <button onclick="return confirm('Confirm Funding Action?');"  type="submit" class="btn btn-primary">Submit</button>

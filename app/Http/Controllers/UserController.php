@@ -13,6 +13,8 @@ use Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Storage;
+use Mail;
+Use App\Mail\FundMail;
 
 class UserController extends Controller
 {
@@ -253,6 +255,7 @@ class UserController extends Controller
                 $receiveData->amount = $amount;
                 $receiveData->desc = "Top-up";
                 $receiveData->save();
+                Mail::to($receiver->email)->send(new FundMail($receiver, $amount));
             } else {
                 return redirect()->back()->with('error', 'FAILED!.');
             }
